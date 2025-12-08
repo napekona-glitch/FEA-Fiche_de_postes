@@ -9,15 +9,34 @@
 [functions]
   node_bundler = "esbuild"
 
-# Règles de réécriture pour le routage côté client
+# Règles de réécriture pour les fichiers statiques
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
+  from = "/*.css"
+  to = "/:splat"
   status = 200
-  force = true  # Ajout de force = true pour forcer la redirection
+  force = false
+
+[[redirects]]
+  from = "/*.js"
+  to = "/:splat"
+  status = 200
+  force = false
+
+[[redirects]]
+  from = "/assets/*"
+  to = "/assets/:splat"
+  status = 200
+  force = false
 
 # Règles pour les appels API
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"
   status = 200
+
+# Règles de réécriture pour le routage côté client (toujours en dernier)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = false
