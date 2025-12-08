@@ -30,12 +30,12 @@
 
 # Règles pour les pages HTML (sans extension)
 [[redirects]]
-  from = "/*"
+  from = "/*.html"
   to = "/:splat.html"
   status = 200
   force = false
 
-# Règles pour la page d'accueil
+# Règle pour la racine
 [[redirects]]
   from = "/"
   to = "/index.html"
@@ -47,7 +47,7 @@
   to = "/.netlify/functions/:splat"
   status = 200
 
-# Règles de réécriture pour le routage côté client (toujours en dernier)
+# Règle de réécriture pour le routage côté client (toujours en dernier)
 [[redirects]]
   from = "/*"
   to = "/index.html"
