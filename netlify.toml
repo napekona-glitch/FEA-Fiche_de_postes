@@ -28,12 +28,11 @@
   status = 200
   force = false
 
-# Règles pour les pages HTML (sans extension)
+# Règles pour les pages HTML existantes
 [[redirects]]
   from = "/*.html"
-  to = "/:splat.html"
+  to = "/:splat"
   status = 200
-  force = false
 
 # Règle pour la racine
 [[redirects]]
