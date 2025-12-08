@@ -205,9 +205,7 @@ class Chatbot {
         // Pour l'instant, nous allons utiliser des réponses prédéfinies
         const lowerMessage = userMessage.toLowerCase();
         
-        if (lowerMessage.includes('bonjour') || lowerMessage.includes('salut') || lowerMessage.includes('coucou')) {
-            return `Bonjour ! Comment puis-je vous aider avec ${this.currentExpert.expertise[0].toLowerCase()} aujourd'hui ?`;
-        } 
+        // Pas de réponse supplémentaire pour "bonjour" car le message de bienvenue est déjà affiché
         
         if (lowerMessage.includes('merci') || lowerMessage.includes('au revoir')) {
             return 'Je vous en prie ! N\'hésitez pas si vous avez d\'autres questions.';
