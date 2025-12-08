@@ -2,11 +2,8 @@
 # netlify.toml — Site statique avec pages HTML nape
 
 [build]
-  # Si tu n'as pas de build (HTML pur), tu peux laisser vide ou juste installer les Functions :
-  # command = "cd netlify/functions && npm ci"
-  # Si tu as un build (ex. Sass, bundler), adapte :
-  command = "npm ci && npm run build && cd netlify/functions && npm ci"
-  publish = "."                     # ou "dist" si tu as un dossier de build
+  command = "cd netlify/functions && npm install"
+  publish = "."
   functions = "netlify/functions"
 
 [build.environment]
