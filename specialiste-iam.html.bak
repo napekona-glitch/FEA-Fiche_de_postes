@@ -1,0 +1,211 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Language" content="fr">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5.2 Spécialiste IAM (Gestion des Identités et des accé¨s) - FEA</title>
+    <link rel="stylesheet" href="CSS/style.css">
+
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>FEA</h1>
+                <p>Filié¨re d'Excelence Architecture</p>
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="index.html">† Retour é  l'index</a></li>
+                    <li><a href="#evaluation">évaluation Technique</a></li>
+                    <li><a href="#fiche-poste">Fiche de Poste</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- Profil Header -->
+        <section class="profile-header-section">
+            <div class="container">
+                <div class="profile-header">
+                    <h1>5.2 Spécialiste IAM (Gestion des Identités et des accé¨s)</h1>
+                    <span class="badge available">Disponible</span>
+                </div>
+                <div class="breadcrumb">
+                    <a href="index.html">Index</a> †’
+                    <a href="index.html#securite">5. Sécurità& Gouvernance</a> †’
+                    <span>5.2 Spécialiste IAM (Gestion des Identités et des accé¨s)</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section évaluation Technique -->
+        <section id="evaluation" class="section">
+            <div class="container">
+                <h2>évaluation Technique</h2>
+                
+                <div class="competence-domain">
+                    <h3>Stratégie & gouvernance IAM</h3>
+                    <p>Définir la stratégie IAM de l'entreprise (politiques d'accé¨s, ré´les, principes de moindre privilé¨ge). Gouvernance des identités, droits & habilitations. Participation é  la définition des politiques de sécurité, chartes d'accé¨s.</p>
+                </div>
+
+                <div class="competence-domain">
+                    <h3>Cycle de vie des identités & gestion des droits</h3>
+                    <p>Gestion du cycle de vie (provisioning, modifications, révocation). Gestion des droits / habilitations (ré´les, profil, approbations). Révisions périodiques des droits, audits d'accé¨s. Séparation des fonctions (SoD), gestion des exceptions.</p>
+                </div>
+
+                <div class="competence-domain">
+                    <h3>Technologies IAM & outils</h3>
+                    <p>Maé®trise de solutions IAM / IGA (ex : SailPoint, ForgeRock, Okta, Microsoft Entra, Azure AD, Ping Identity). Intégration avec annuaires (LDAP, Active Directory, Azure AD). Connaissance des protocoles : OAuth2, OIDC, SAML, SCIM. PAM / gestion des comptes é  privilé¨ges (PAM / PAM & PAM solutions).</p>
+                </div>
+
+                <div class="competence-domain">
+                    <h3>Intégration & interopérabilité</h3>
+                    <p>Connecteurs vers applications internes / externes (API, web services, applications métier). Interopérabilitàavec d'autres systé¨mes de sécurità(SIEM, outils de logs). Automatisations via scripts ou API pour synchronisation des identités.</p>
+                </div>
+
+                <div class="competence-domain">
+                    <h3>Sécurità& conformité</h3>
+                    <p>Authentification forte (MFA, biométrie, PKI). Chiffrement des données & sécurisation des communications. Contré´le d'accé¨s (RBAC, ABAC). Conformitàréglementaire (RGPD, normes secteur).</p>
+                </div>
+
+                <div class="competence-domain">
+                    <h3>Opérations & support IAM</h3>
+                    <p>Déploiement, maintenance, supervision des services IAM. Support des incidents, analyses d'anomalies. Surveillance des accé¨s, journaux, traé§abilité. Tests, mises é  jour, correctifs et évolutions.</p>
+                </div>
+
+                <div class="competence-domain">
+                    <h3>Automatisation & DevOps IAM</h3>
+                    <p>Infrastructure as Code pour les composants IAM. Automatisation des processus (workflow, provisioning automatisé). Intégration IAM dans les pipelines CI/CD. Scripting (Python, PowerShell, etc.) pour automatismes.</p>
+                </div>
+
+                <div class="competence-domain">
+                    <h3>Soft skills & collaboration</h3>
+                    <p>Communication claire entre DSI, métiers & sécurité. Animation d'ateliers, formation / sensibilisation des utilisateurs. Capacitàde persuasion, arbitrage et compromis. Rigueur dans l'exigence sécurité.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Fiche de Poste -->
+        <section id="fiche-poste" class="section">
+            <div class="container">
+                <h2>Fiche de Poste pour Agent de talent</h2>
+                
+                <div class="mission-description">
+                    <h3>Vous étes Spécialiste IAM (Gestion des identités et accé¨s) SI et vous recherchez une mission en freelance ?</h3>
+                    <p>Nous avons le projet qu'il vous faut pour l'un de nos clients basés é  Niort dans le secteur des assurances.</p>
+                </div>
+
+                <div class="mission-expectations">
+                    <h3>Ce que l'on attend de la personne (type de mission)</h3>
+                    <p>Le Spécialiste IAM est chargàde :</p>
+                    <ul>
+                        <li>Définir la stratégie IAM : politiques d'accé¨s, ré´les, principes de moindre privilé¨ge</li>
+                        <li>Gérer le cycle de vie des identités : provisioning, modification, révocation, audits</li>
+                        <li>Déployer et maintenir les solutions IAM / IGA (SailPoint, ForgeRock, Okta, Azure AD€¦)</li>
+                        <li>Assurer l'intégration avec les systé¨mes internes et externes via API, annuaires, connecteurs</li>
+                        <li>Garantir la sécuritàet la conformità: MFA, chiffrement, RBAC/ABAC, RGPD</li>
+                        <li>Superviser les opérations IAM : incidents, journaux, traé§abilité, mises é  jour</li>
+                        <li>Automatiser les processus IAM via scripting et intégration CI/CD</li>
+                    </ul>
+                </div>
+
+                <div class="profile-requirements">
+                    <h3>Ce que la personne est (compétences attendues)</h3>
+                    <p>Un(e) Spécialiste IAM avec :</p>
+                    <ul>
+                        <li>Une formation Bac+5 en informatique ou cybersécurité</li>
+                        <li>Une expérience confirmée (3 é  5 ans minimum) en IAM ou gestion des accé¨s</li>
+                        <li>Une maé®trise des outils IAM / IGA et des protocoles (OAuth2, SAML, SCIM€¦)</li>
+                        <li>Des compétences en sécuritàdes accé¨s, gestion des comptes é  privilé¨ges (PAM), automatisation</li>
+                        <li>Des qualités personnelles : rigueur, communication claire, capacitàd'arbitrage, sensibilisation des utilisateurs</li>
+                        <li>Des certifications sécurità/ IAM appréciées (CISSP, CISM, vendor-specific)</li>
+                        <li>Une disponibilitàpour travailler sur site avec déplacements ponctuels dans la région</li>
+                    </ul>
+                </div>
+
+                <div class="rate-info">
+                    <h3>Taux Journalier Moyen (TJM)</h3>
+                    <p class="rate">650 é  800 ‚¬/jour HT</p>
+                </div>
+
+                <div class="contact-section">
+                    <h3>Intéressé(e) par cette opportunità?</h3>
+                    <p>Envoyez-nous votre CV et nous vous recontacterons rapidement.</p>
+                      <button id="publishBtn" class="contact-btn">Publier l'offre</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 FEA - Filié¨re Architecture. Tous droits réservés.</p>
+        </div>
+    </footer>
+<!-- Chatbot -->
+  <!-- Bouton flottant pour ouvrir le chat -->
+<button id="chatbot-toggle" class="chatbot-toggle">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span class="chatbot-notification" id="chat-notification"></span>
+</button>
+
+<!-- Conteneur du chatbot (cachàpar défaut) -->
+<div id="chatbot-container">
+    <div class="chatbot-header">
+        <div class="header-content">
+            <div class="chatbot-avatar">
+                <img src="https://img.icons8.com/color/96/000000/chatbot.png" alt="Chatbot">
+            </div>
+            <div class="chatbot-info">
+                <h3>Assistant FEA</h3>
+                <p>En ligne</p>
+            </div>
+        </div>
+        <button id="minimize-chat" class="icon-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+        </button>
+    </div>
+    
+    <div class="chatbot-messages" id="chat-messages">
+        <div class="welcome-message">
+            <p>👋Bonjour ! Je suis votre assistant virtuel. Comment puis-je vous aider aujourd'hui ?</p>
+            <p>Vous pouvez me poser des questions sur les fiches de poste, les compétences requises ou tout autre sujet liàé  la filié¨re architecture.</p>
+        </div>
+    </div>
+    
+    <div class="chatbot-input">
+        <input type="text" id="user-input" placeholder="Posez votre question...">
+        <button id="send-message">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </div>
+</div>
+
+<script src="JS/chatbot.js"></script>
+    <script src="JS/email-service.js"></script>
+    <script src="JS/script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

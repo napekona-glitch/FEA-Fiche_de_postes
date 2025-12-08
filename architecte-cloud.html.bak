@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3.2 Architecte Cloud - FEA</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>FEA</h1>
+                <p>Filié¨re d'Excelence Architecture</p>
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="index.html">† Retour é  l'index</a></li>
+                    <li><a href="#evaluation">é‰valuation Technique</a></li>
+                    <li><a href="#fiche-poste">Fiche de Poste</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- Profil Header -->
+        <section class="profile-header-section">
+            <div class="container">
+                <div class="profile-header">
+                    <h1>3.2 Architecte Cloud</h1>
+                    <span class="badge available">Disponible</span>
+                </div>
+                <div class="breadcrumb">
+                    <a href="index.html">Index</a> †’
+                    <a href="index.html#cloud">3. Cloud & Infrastructure</a> †’
+                    <span>3.2 Architecte Cloud</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section é‰valuation Technique -->
+        <section id="evaluation" class="section">
+            <div class="container">
+                <h2>é‰valuation Technique</h2>
+                
+                <div class="competence-domain">
+                    <h3>Architecture Cloud & conception</h3>
+                    <p>Dé©finition de l'architecture cible (IaaS, PaaS, SaaS). Conception de solutions ré©silientes, é©volutives et sé©curisé©es. Choix entre modé¨les multi-cloud, hybride ou cloud privé©. Dimensionnement des ressources et pilotage des performances.</p>
+                </div>
+
+                <div class="competence-domain">
+                    <h3>Services Cloud & technologies</h3>
+                    <p>Maé®trise de services cloud majeurs (AWS, Azure, GCP). Expé©rience avec les services de stockage, bases de donné©es managé©es, fonctions serverless, conteneurs, micro-services. Orchestration (Kubernetes, OpenShift). Networking cloud (VPC, peering, VPN, transit gateway).</p>
+                </div>
+
+                <div class="competence-domain">
+                    <h3>Infrastructure as Code & automation</h3>
+                    <p>Terraform, CloudFormation, Ansible, Pulumi. Automatisation des dé©ploiements, gestion des configurations. Pipelines CI/CD pour la livraison cloud. Scripting (Python, Bash, etc.).</p>
+                </div>
+
+                <div class="competence-domain">
+                    <h3>Sé©curité©, conformité© & gouvernance</h3>
+                    <p>Sé©curité© by design : IAM, chiffrement, gestion des secrets. Audits sé©curité©, conformité© RGPD, normes cloud. Gestion des accé¨s & segmentation. Surveillance & alerting de la sé©curité© cloud.</p>
+                </div>
+
+                <div class="competence-domain">
+                    <h3>Migration & transformation cloud</h3>
+                    <p>Migrer des workloads on-premise vers le cloud (lift & shift, refactor, replatforming). é‰tude d'impacts, plan de migration, rollback. Straté©gies de conteneurisation ou refonte. Interopé©rabilité© avec systé¨mes existants.</p>
+                </div>
+
+                <div class="competence-domain">
+                    <h3>Ops, exploitation & monitoring</h3>
+                    <p>Monitoring cloud (Grafana, Prometheus, CloudWatch, Azure Monitor, etc.). Logging, mé©triques, alerting. Gestion des incidents / ré©silience. Optimisation des coé»ts cloud.</p>
+                </div>
+
+                <div class="competence-domain">
+                    <h3>Inté©gration & interfaé§age</h3>
+                    <p>Conception de bus d'inté©gration / API pour les services cloud. Services de messagerie / bus é©vé©nementiel (Kafka, EventBridge, Pub/Sub). Interopé©rabilité© entre cloud et applications legacy.</p>
+                </div>
+
+                <div class="competence-domain">
+                    <h3>Soft skills & leadership</h3>
+                    <p>Capacité© é  communiquer avec les mé©tiers et la direction. Animation d'ateliers d'architecture cloud. Force de proposition, autonomie, esprit de synthé¨se. Accompagnement des é©quipes techniques dans la monté©e en compé©tences.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Fiche de Poste -->
+        <section id="fiche-poste" class="section">
+            <div class="container">
+                <h2>Fiche de Poste pour Agent de talent</h2>
+                
+                <div class="mission-description">
+                    <h3>Vous éªtes Architecte Cloud SI et vous recherchez une mission en freelance ?</h3>
+                    <p>Nous avons le projet qu'il vous faut pour l'un de nos clients basé©s é  Niort dans le secteur des assurances.</p>
+                </div>
+
+                <div class="mission-expectations">
+                    <h3>Ce que l'on attend de la personne (type de mission)</h3>
+                    <p>L'Architecte Cloud est chargé© de :</p>
+                    <ul>
+                        <li>Dé©finir l'architecture cible cloud (IaaS, PaaS, SaaS) et choisir les modé¨les adapté©s (multi-cloud, hybride, privé©)</li>
+                        <li>Concevoir des solutions sé©curisé©es, é©volutives et ré©silientes</li>
+                        <li>Piloter les migrations vers le cloud (lift & shift, refactor, replatforming)</li>
+                        <li>Automatiser les dé©ploiements via Infrastructure as Code et pipelines CI/CD</li>
+                        <li>Superviser les performances et la sé©curité© cloud (monitoring, alerting, IAM, audits)</li>
+                        <li>Assurer l'interopé©rabilité© entre cloud et systé¨mes legacy</li>
+                        <li>Accompagner les é©quipes techniques et animer des ateliers d'architecture cloud</li>
+                    </ul>
+                </div>
+
+                <div class="profile-requirements">
+                    <h3>Ce que la personne est (compé©tences attendues)</h3>
+                    <p>Un(e) Architecte Cloud avec :</p>
+                    <ul>
+                        <li>Une expé©rience confirmé©e (5 é  8 ans ou plus) en architecture cloud</li>
+                        <li>Une formation Bac+5 en ingé©nierie ou informatique</li>
+                        <li>Une maé®trise des principaux services cloud (AWS, Azure, GCP), conteneurs, serverless, networking cloud</li>
+                        <li>Des compé©tences en Infrastructure as Code (Terraform, CloudFormation, Ansible), scripting (Python, Bash)</li>
+                        <li>Une expertise en sé©curité© cloud : IAM, chiffrement, gestion des accé¨s, conformité© RGPD</li>
+                        <li>Des qualité©s personnelles : autonomie, esprit de synthé¨se, force de proposition, leadership</li>
+                        <li>Des certifications cloud reconnues (AWS, Azure, GCP) et une disponibilité© pour du travail hybride avec dé©placements ponctuels é  Niort</li>
+                    </ul>
+                </div>
+
+                <div class="rate-info">
+                    <h3>Taux Journalier Moyen (TJM)</h3>
+                    <p class="rate">600 é  700 ‚¬/jour HT</p>
+                </div>
+
+                <div class="contact-section">
+                    <h3>Inté©ressé©(e) par cette opportunité© ?</h3>
+                    <p>Envoyez-nous votre CV et nous vous recontacterons rapidement.</p>
+                      <button id="publishBtn" class="contact-btn">Publier l'offre</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 FEA - Filié¨re Architecture. Tous droits ré©servé©s.</p>
+        </div>
+    </footer>
+<!-- Chatbot -->
+  <!-- Bouton flottant pour ouvrir le chat -->
+<button id="chatbot-toggle" class="chatbot-toggle">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span class="chatbot-notification" id="chat-notification"></span>
+</button>
+
+<!-- Conteneur du chatbot (caché© par dé©faut) -->
+<div id="chatbot-container">
+    <div class="chatbot-header">
+        <div class="header-content">
+            <div class="chatbot-avatar">
+                <img src="https://img.icons8.com/color/96/000000/chatbot.png" alt="Chatbot">
+            </div>
+            <div class="chatbot-info">
+                <h3>Assistant FEA</h3>
+                <p>En ligne</p>
+            </div>
+        </div>
+        <button id="minimize-chat" class="icon-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+        </button>
+    </div>
+    
+    <div class="chatbot-messages" id="chat-messages">
+        <div class="welcome-message">
+            <p>ðŸ‘‹ Bonjour ! Je suis votre assistant virtuel. Comment puis-je vous aider aujourd'hui ?</p>
+            <p>Vous pouvez me poser des questions sur les fiches de poste, les compé©tences requises ou tout autre sujet lié© é  la filié¨re architecture.</p>
+        </div>
+    </div>
+    
+    <div class="chatbot-input">
+        <input type="text" id="user-input" placeholder="Posez votre question...">
+        <button id="send-message">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </div>
+</div>
+
+<script src="JS/chatbot.js"></script>
+    <script src="JS/email-service.js"></script>
+    <script src="JS/script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
