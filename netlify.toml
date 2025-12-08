@@ -14,7 +14,7 @@
   from = "/*"
   to = "/index.html"
   status = 200
-  force = false
+  force = true  # Ajout de force = true pour forcer la redirection
 
 # Règles pour les appels API
 [[redirects]]
