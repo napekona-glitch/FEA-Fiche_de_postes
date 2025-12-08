@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+const fs = require('fs');
+
+const correctIndexHTML = `<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -119,4 +121,7 @@
     <script src="/JS/search.js?v=1765190611133"></script>
     <script src="/JS/script.js?v=1765190611133"></script>
 </body>
-</html>
+</html>`;
+
+fs.writeFileSync('./index.html', correctIndexHTML);
+console.log('Restored complete index.html with proper structure');
