@@ -63,40 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
         lastScroll = currentScroll;
     });
 
-    // Animation des liens de l'index
-    const indexLinks = document.querySelectorAll('.index-list a');
-    
-    indexLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            
-            // Si c'est un lien vers une autre page (contient .html), laisser le comportement par défaut
-            if (href.includes('.html')) {
-                return;
-            }
-            
-            // Sinon, c'est un lien d'ancrage dans la même page
-            e.preventDefault();
-            const targetId = href.substring(1);
-            const targetElement = document.getElementById(targetId);
-            
-            if (targetElement) {
-                // Ajouter un effet de surbrillance temporaire
-                targetElement.style.transition = 'background-color 0.3s ease';
-                targetElement.style.backgroundColor = '#fff3cd';
-                
-                setTimeout(() => {
-                    targetElement.style.backgroundColor = '';
-                }, 2000);
-                
-                // Scroll vers l'élément
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'center'
-                });
-            }
-        });
-    });
+    // Animation des liens de l'index - REMOVED to allow normal link navigation
 
     // Fonction pour imprimer une section spécifique
     window.printSection = function(sectionId) {
