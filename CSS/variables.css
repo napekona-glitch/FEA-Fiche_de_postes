@@ -1,24 +1,24 @@
 /* Variables CSS rafraîchies pour une meilleure harmonie */
 :root {
   /* Palette principale raffinée */
-  --primary-dark: #E8C15E;    /* Jaune doré plus doux */
-  --primary-medium: #F0B23A;  /* Jaune doré chaud */
+  --primary-dark: #E8C15E;    /* Jaune doràplus doux */
+  --primary-medium: #F0B23A;  /* Jaune doràchaud */
   --primary-light: #FAE7B5;   /* Jaune pâle très doux */
   
   /* Accents redéfinis */
-  --accent-secondary: #D4A93B; /* Doré plus profond */
+  --accent-secondary: #D4A93B; /* Doràplus profond */
   --accent-light: #F5EDD6;     /* Crème chaud */
   
   /* Nouveaux tons neutres */
   --bg-white: #FFFFFF;
-  --bg-light: #FFFBF0;         /* Blanc cassé légèrement doré */
+  --bg-light: #FFFBF0;         /* Blanc cassàlégèrement dorà*/
   --bg-lighter: #FFFDF8;       /* Très léger pour les fonds */
   
   /* Hiérarchie de textes améliorée */
   --text-primary: #2A2A2A;     /* Noir profond */
   --text-secondary: #4A4A4A;   /* Gris anthracite */
   --text-tertiary: #6B6B6B;    /* Gris moyen pour texte secondaire */
-  --text-light: #5E4E1F;       /* Brun doré pour contraste */
+  --text-light: #5E4E1F;       /* Brun doràpour contraste */
   
   /* Accents fonctionnels plus harmonieux */
   --accent-success: #7CB342;   /* Vert mousse */

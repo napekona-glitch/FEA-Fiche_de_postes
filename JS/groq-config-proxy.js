@@ -1,6 +1,6 @@
-// Configuration pour l'API Groq via proxy (sécurisée)
+﻿// Configuration pour l'API Groq via proxy (sécurisée)
 const GROQ_CONFIG = {
-    // Plus de clé API côté client !
+    // Plus de clàAPI côtàclient !
     
     // URL du proxy local (pas d'exposition de clé)
     API_URL: 'http://localhost:3001/api/groq',

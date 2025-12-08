@@ -1,4 +1,4 @@
-// Script pour le site FEA - Fiches de Poste
+﻿// Script pour le site FEA - Fiches de Poste
 
 document.addEventListener('DOMContentLoaded', function() {
     // Navigation smooth
@@ -196,5 +196,5 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
  
-    console.log('Site FEA - Fiches de Poste chargé avec succès !');
+    console.log('Site FEA - Fiches de Poste chargàavec succès !');
 });

@@ -1,4 +1,4 @@
-const express = require('express');
+﻿const express = require('express');
 const fetch = require('node-fetch');
 const cors = require('cors');
 
@@ -50,5 +50,5 @@ app.post('/api/groq', async (req, res) => {
 app.use(express.static('.'));
 
 app.listen(PORT, () => {
-    console.log(`Serveur proxy démarré sur http://localhost:${PORT}`);
+    console.log(`Serveur proxy démarràsur http://localhost:${PORT}`);
 });

@@ -1,10 +1,14 @@
-console.log('Chargement du fichier chatbot.js');
+﻿console.log('Chargement du fichier chatbot.js');
+
+// Configuration du backend Cloudflare
+const BACKEND_URL = 'https://groq-api-proxy-public.napekona.workers.dev'; // Mode production
+// const BACKEND_URL = 'http://localhost:8787'; // Mode développement local
 
 // Configuration des experts par page
 const experts = {
     'architecte-entreprise': {
         name: 'Expert en Architecture d\'Entreprise',
-        description: 'Je suis spécialisé en architecture d\'entreprise, avec une expertise en alignement stratégique des systèmes d\'information sur les objectifs métier.',
+        description: 'Je suis spécialisàen architecture d\'entreprise, avec une expertise en alignement stratégique des systèmes d\'information sur les objectifs métier.',
         expertise: [
             'Gouvernance SI',
             'Urbanisation des SI',
@@ -26,9 +30,9 @@ const experts = {
     },
     'architecte-securite': {
         name: 'Expert en Sécurité',
-        description: 'Je suis spécialisé dans la cybersécurité et la protection des systèmes d\'information.',
+        description: 'Je suis spécialisàdans la cybersécuritàet la protection des systèmes d\'information.',
         expertise: [
-            'Sécurité des applications',
+            'Sécuritàdes applications',
             'Conformité',
             'Tests d\'intrusion',
             'Politiques de sécurité',
@@ -45,25 +49,19 @@ class Chatbot {
         this.currentExpert = this.detectExpert();
         console.log('Expert détecté:', this.currentExpert);
         
-        // Vérifier si le service Groq est disponible
-        this.groqService = window.groqService || null;
-        console.log('Service Groq disponible:', !!this.groqService);
+        // Utiliser le backend Cloudflare
+        this.backendUrl = BACKEND_URL;
+        console.log('URL du backend:', this.backendUrl);
         
         this.initialize();
-        
-        // Initialiser le service Groq si disponible
-        if (this.groqService) {
-            console.log('Initialisation de la conversation Groq...');
-            this.groqService.initializeConversation(this.currentExpert);
-            console.log('Conversation Groq initialisée');
-        }
+        console.log('Chatbot initialisàavec le backend Cloudflare');
     }
 
     detectExpert() {
         const path = window.location.pathname.split('/').pop().replace('.html', '');
         return experts[path] || {
             name: 'Expert Wekey',
-            description: 'Je suis un expert Wekey spécialisé dans les métiers de l\'architecture et des technologies de l\'information.',
+            description: 'Je suis un expert Wekey spécialisàdans les métiers de l\'architecture et des technologies de l\'information.',
             expertise: ['Architecture SI', 'Technologies Cloud', 'Développement', 'Sécurité', 'Gestion de projet']
         };
     }
@@ -73,17 +71,16 @@ class Chatbot {
         try {
             this.setupEventListeners();
             console.log('Écouteurs d\'événements configurés');
-            this.addWelcomeMessage();
-            console.log('Message de bienvenue ajouté');
+            // Ne pas ajouter de message de bienvenue supplémentaire
+            // car il est déjà défini dans le HTML
+            console.log('Utilisation du message de bienvenue du HTML');
         } catch (error) {
             console.error('Erreur lors de l\'initialisation du chatbot:', error);
         }
     }
 
-    addWelcomeMessage() {
-        const welcomeMessage = `Bonjour ! Je suis ${this.currentExpert.name}. ${this.currentExpert.description} Comment puis-je vous aider aujourd'hui ?`;
-        this.addMessage('assistant', welcomeMessage);
-    }
+    // La méthode addWelcomeMessage a étàsupprimée car le message de bienvenue
+    // est maintenant défini directement dans le HTML
 
     addMessage(role, content) {
         const messagesContainer = document.getElementById('chat-messages');
@@ -99,7 +96,11 @@ class Chatbot {
             <div class="message-time">${new Date().toLocaleTimeString([], {hour: '2-digit', 'minute': '2-digit'})}</div>
         `;
         messagesContainer.appendChild(messageElement);
-        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        
+        // Forcer le scroll vers le bas avec un petit délai pour l'animation
+        setTimeout(() => {
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }, 100);
         
         // Ajouter au tableau des messages pour l'historique
         this.messages.push({ role, content });
@@ -131,22 +132,15 @@ class Chatbot {
         try {
             let response;
             
-            // Utiliser Groq si disponible, sinon utiliser la réponse par défaut
-            if (this.groqService) {
-                console.log('Tentative d\'envoi du message à Groq...');
-                try {
-                    response = await this.groqService.sendMessage(userMessage);
-                    console.log('Réponse reçue de Groq:', response);
-                } catch (error) {
-                    console.error('Erreur avec le service Groq:', error);
-                    // En cas d'erreur avec Groq, basculer sur la réponse par défaut
-                    console.log('Utilisation de la réponse par défaut');
-                    response = this.generateResponse(userMessage);
-                }
-            } else {
-                console.log('Service Groq non disponible, utilisation de la réponse par défaut');
-                // Simulation de délai pour l'expérience utilisateur
-                await new Promise(resolve => setTimeout(resolve, 1000));
+            // Utiliser le backend Cloudflare
+            console.log('Tentative d\'envoi du message au backend Cloudflare...');
+            try {
+                response = await this.sendMessageToBackend(userMessage);
+                console.log('Réponse reçue du backend:', response);
+            } catch (error) {
+                console.error('Erreur avec le backend:', error);
+                // En cas d'erreur, basculer sur la réponse par défaut
+                console.log('Utilisation de la réponse par défaut');
                 response = this.generateResponse(userMessage);
             }
             
@@ -162,15 +156,6 @@ class Chatbot {
                 typingIndicator.remove();
             }
             this.addMessage('assistant', 'Désolé, une erreur est survenue. Veuillez réessayer plus tard.');
-            
-            // En cas d'erreur, réinitialiser la conversation
-            if (this.groqService) {
-                try {
-                    this.groqService.resetConversation(this.currentExpert);
-                } catch (e) {
-                    console.error('Erreur lors de la réinitialisation de la conversation:', e);
-                }
-            }
         } finally {
             // Réactiver l'input après le traitement
             input.disabled = false;
@@ -179,10 +164,36 @@ class Chatbot {
         }
     }
 
+    async sendMessageToBackend(message) {
+        try {
+            const response = await fetch(`${this.backendUrl}/chat`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    message: message,
+                    expert: this.currentExpert,
+                    context: 'chatbot FEA'
+                })
+            });
+
+            if (!response.ok) {
+                throw new Error(`Erreur HTTP: ${response.status}`);
+            }
+
+            const data = await response.json();
+            return data.response || this.generateResponse(message);
+        } catch (error) {
+            console.error('Erreur lors de la communication avec le backend:', error);
+            throw error;
+        }
+    }
+
     showTypingIndicator() {
         const messagesContainer = document.getElementById('chat-messages');
         if (!messagesContainer) {
-            console.error('Conteneur de messages non trouvé pour l\'indicateur de frappe');
+            console.error('Conteneur de messages non trouvàpour l\'indicateur de frappe');
             return null;
         }
 
@@ -196,7 +207,12 @@ class Chatbot {
             </div>
         `;
         messagesContainer.appendChild(typingElement);
-        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        
+        // Scroll vers le bas pour l'indicateur de typing
+        setTimeout(() => {
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }, 50);
+        
         return typingElement;
     }
 
@@ -237,38 +253,50 @@ class Chatbot {
             });
         }
         
-        // Gérer la fermeture et la minimisation
-        const minimizeChat = document.getElementById('minimize-chat');
-        if (minimizeChat) {
-            minimizeChat.addEventListener('click', () => {
-                const container = document.getElementById('chatbot-container');
-                if (container) {
-                    container.classList.toggle('minimized');
-                }
-            });
-        }
-        
-        const closeChat = document.getElementById('close-chat');
-        if (closeChat) {
-            closeChat.addEventListener('click', () => {
-                const container = document.getElementById('chatbot-container');
-                if (container) {
-                    container.style.display = 'none';
-                }
-            });
-        }
+        // Gérer la fermeture et la minimisation (ancien code à supprimer car dupliqué)
+        // Ces gestionnaires sont maintenant définis plus bas dans la fonction setupEventListeners principale
 
         // Gérer le bouton toggle
         const chatbotToggle = document.getElementById('chatbot-toggle');
         const chatbotContainer = document.getElementById('chatbot-container');
         const chatNotification = document.getElementById('chat-notification');
+        const minimizeChat = document.getElementById('minimize-chat');
+        
+        console.log('Éléments trouvés:', {
+            chatbotToggle: !!chatbotToggle,
+            chatbotContainer: !!chatbotContainer,
+            minimizeChat: !!minimizeChat,
+            chatNotification: !!chatNotification
+        });
+        
         let isFirstInteraction = true;
 
-        if (chatbotToggle && chatbotContainer) {
+        if (chatbotToggle && chatbotContainer && minimizeChat) {
             // Fonction pour ouvrir le chat
             function openChat() {
+                console.log('Ouverture du chatbot...');
+                
+                // Forcer les styles pour l'ouverture
+                chatbotContainer.style.height = '70vh';
+                chatbotContainer.style.minHeight = '500px';
+                chatbotContainer.style.maxHeight = '700px';
+                chatbotContainer.style.overflow = '';
+                chatbotContainer.style.transform = 'translateY(0)';
+                chatbotContainer.style.opacity = '1';
+                chatbotContainer.style.visibility = 'visible';
+                
+                // Afficher le contenu
+                const messages = chatbotContainer.querySelector('.chatbot-messages');
+                const input = chatbotContainer.querySelector('.chatbot-input');
+                if (messages) messages.style.display = 'flex';
+                if (input) input.style.display = 'flex';
+                
                 chatbotContainer.classList.add('active');
+                chatbotContainer.classList.remove('minimized');
                 chatbotToggle.style.display = 'none';
+                
+                console.log('Chatbot ouvert, classes:', chatbotContainer.className);
+                console.log('Style forcé:', chatbotContainer.style.cssText);
                 
                 // Masquer la notification si c'est la première interaction
                 if (isFirstInteraction) {
@@ -279,16 +307,30 @@ class Chatbot {
                 }
             }
 
-            // Fonction pour fermer le chat
-            function closeChatFunc() {
-                chatbotContainer.classList.remove('active');
-                chatbotToggle.style.display = 'flex';
-            }
-
             // Fonction pour minimiser le chat
             function minimizeChatFunc() {
+                console.log('Minimisation du chatbot...');
+                console.log('État avant:', chatbotContainer.className);
+                
+                // Forcer la minimisation avec style inline
+                chatbotContainer.style.height = '60px';
+                chatbotContainer.style.minHeight = '60px';
+                chatbotContainer.style.maxHeight = '60px';
+                chatbotContainer.style.overflow = 'hidden';
+                
+                // Cacher le contenu
+                const messages = chatbotContainer.querySelector('.chatbot-messages');
+                const input = chatbotContainer.querySelector('.chatbot-input');
+                if (messages) messages.style.display = 'none';
+                if (input) input.style.display = 'none';
+                
+                // Retirer active et ajouter minimized
                 chatbotContainer.classList.remove('active');
+                chatbotContainer.classList.add('minimized');
                 chatbotToggle.style.display = 'flex';
+                
+                console.log('État après:', chatbotContainer.className);
+                console.log('Style forcé:', chatbotContainer.style.cssText);
                 
                 // Afficher une notification pour indiquer qu'il y a eu une activité
                 if (chatNotification) {
@@ -296,9 +338,8 @@ class Chatbot {
                 }
             }
 
-            // Événements
+            // Événements (déplacés à l'intérieur du if)
             chatbotToggle.addEventListener('click', openChat);
-            closeChat.addEventListener('click', closeChatFunc);
             minimizeChat.addEventListener('click', minimizeChatFunc);
 
             // Fermer le chat en cliquant à l'extérieur
@@ -321,6 +362,8 @@ class Chatbot {
                     chatNotification.style.display = 'block';
                 }
             }, 10000);
+        } else {
+            console.error('Certains éléments du chatbot n\'ont pas été trouvés');
         }
     }
 }
@@ -331,117 +374,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Attendre un peu que les scripts se chargent
     setTimeout(() => {
-        console.log('Configuration Groq:', window.GROQ_CONFIG || 'Non chargée');
-        console.log('Service Groq:', window.groqService ? 'Disponible' : 'Non disponible');
-        
-        if (!window.groqService && window.GROQ_CONFIG) {
-            console.log('Tentative de création manuelle du service Groq...');
-            try {
-                // Créer manuellement le service si nécessaire
-                class GroqService {
-                    constructor() {
-                        console.log('Initialisation du service Groq...');
-                        this.config = window.GROQ_CONFIG || {};
-                        console.log('Configuration Groq chargée:', this.config.API_URL ? 'Oui' : 'Non');
-                        console.log('Clé API présente:', this.config.API_KEY ? 'Oui' : 'Non');
-                        
-                        // Validation de la clé API
-                        if (this.config.API_KEY) {
-                            console.log('Longueur de la clé API:', this.config.API_KEY.length);
-                            console.log('Début de la clé API:', this.config.API_KEY.substring(0, 10) + '...');
-                            
-                            if (!this.config.API_KEY.startsWith('gsk_')) {
-                                console.error('La clé API ne commence pas par "gsk_"');
-                            }
-                            if (this.config.API_KEY.length < 20) {
-                                console.error('La clé API semble trop courte');
-                            }
-                        } else {
-                            console.error('Aucune clé API trouvée');
-                        }
-                        
-                        this.conversationHistory = [];
-                        console.log('Service Groq initialisé');
-                    }
-
-                    initializeConversation(expert) {
-                        this.conversationHistory = [
-                            {
-                                role: 'system',
-                                content: `Tu es un assistant expert en ${expert.name.toLowerCase()}. 
-                                Tu es spécialisé dans: ${expert.expertise.join(', ')}. 
-                                Tu réponds de manière précise et professionnelle en français. 
-                                Sois concis et va droit au but.`
-                            }
-                        ];
-                    }
-
-                    async sendMessage(message) {
-                        console.log('Envoi du message à Groq:', message);
-                        this.conversationHistory.push({
-                            role: 'user',
-                            content: message
-                        });
-
-                        try {
-                            // Debug: afficher les détails de la requête
-                            console.log('URL de l\'API:', this.config.API_URL);
-                            console.log('Modèle:', this.config.MODEL);
-                            console.log('Authorization header:', this.config.HEADERS.Authorization);
-                            
-                            const response = await fetch(this.config.API_URL, {
-                                method: 'POST',
-                                headers: this.config.HEADERS,
-                                body: JSON.stringify({
-                                    model: this.config.MODEL,
-                                    messages: this.conversationHistory,
-                                    temperature: this.config.TEMPERATURE,
-                                    max_tokens: this.config.MAX_TOKENS
-                                })
-                            });
-
-                            console.log('Statut de la réponse:', response.status);
-                            console.log('Headers de la réponse:', response.headers);
-
-                            if (!response.ok) {
-                                const errorText = await response.text();
-                                console.error('Détail de l\'erreur:', errorText);
-                                throw new Error(`Erreur HTTP: ${response.status} - ${errorText}`);
-                            }
-
-                            const data = await response.json();
-                            console.log('Réponse de l\'API:', data);
-                            
-                            if (!data.choices || data.choices.length === 0) {
-                                throw new Error('Aucune réponse générée par l\'API');
-                            }
-                            
-                            const botResponse = data.choices[0].message.content;
-                            
-                            this.conversationHistory.push({
-                                role: 'assistant',
-                                content: botResponse
-                            });
-
-                            return botResponse;
-                        } catch (error) {
-                            console.error('Erreur lors de l\'appel à l\'API Groq:', error);
-                            throw error;
-                        }
-                    }
-
-                    resetConversation(expert) {
-                        this.initializeConversation(expert);
-                    }
-                }
-                
-                window.groqService = new GroqService();
-                console.log('Service Groq créé manuellement');
-            } catch (error) {
-                console.error('Erreur lors de la création manuelle du service Groq:', error);
-            }
-        }
-        
+        console.log('URL du backend:', BACKEND_URL);
         window.chatbot = new Chatbot();
+        console.log('Chatbot démarràavec succès');
     }, 500); // Attendre 500ms que les scripts se chargent
 });

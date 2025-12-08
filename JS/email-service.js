@@ -1,4 +1,4 @@
-// email-service.js - Service partagé pour l'envoi d'emails
+﻿// email-service.js - Service partagàpour l'envoi d'emails
 
 function setupEmailButtons() {
     const emailButtons = document.querySelectorAll('.email-button');

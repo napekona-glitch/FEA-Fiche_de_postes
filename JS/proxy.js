@@ -1,4 +1,4 @@
-
+﻿
 export default async function handler(req, res) {
   const { query } = req; // e.g., ?q=searchTerm
   const apiToken = process.env.GROQ_TOKEN; // stored as environment variable

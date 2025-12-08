@@ -20,7 +20,7 @@ $chatbotHtml = @"
         <div class="chatbot-messages">
             <div class="welcome-message">
                 <p>👋 Bonjour ! Je suis votre assistant virtuel. Comment puis-je vous aider aujourd'hui ?</p>
-                <p>Vous pouvez me poser des questions sur les fiches de poste, les compétences requises ou tout autre sujet lié à la filière architecture.</p>
+                <p>Vous pouvez me poser des questions sur les fiches de poste, les compétences requises ou tout autre sujet liàà la filière architecture.</p>
             </div>
         </div>
         
@@ -60,5 +60,5 @@ foreach ($file in $htmlFiles) {
     }
 }
 
-Write-Host "✅ Toutes les fiches ont été mises à jour avec succès !"
+Write-Host "✅ Toutes les fiches ont étàmises à jour avec succès !"
 Read-Host "Appuyez sur Entrée pour continuer..."

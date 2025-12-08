@@ -1,10 +1,10 @@
-// Service pour interagir avec l'API Groq
+﻿// Service pour interagir avec l'API Groq
 class GroqService {
     constructor() {
         console.log('Initialisation du service Groq...');
         this.config = window.GROQ_CONFIG || {};
         console.log('Configuration Groq chargée:', this.config.API_URL ? 'Oui' : 'Non');
-        console.log('Clé API présente:', this.config.API_KEY ? 'Oui' : 'Non');
+        console.log('ClàAPI présente:', this.config.API_KEY ? 'Oui' : 'Non');
         this.conversationHistory = [];
         console.log('Service Groq initialisé');
     }
@@ -18,7 +18,7 @@ class GroqService {
             {
                 role: 'system',
                 content: `Tu es un assistant expert en ${expert.name.toLowerCase()}. 
-                Tu es spécialisé dans: ${expert.expertise.join(', ')}. 
+                Tu es spécialisàdans: ${expert.expertise.join(', ')}. 
                 Tu réponds de manière précise et professionnelle en français. 
                 Sois concis et va droit au but.`
             }

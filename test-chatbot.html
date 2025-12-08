@@ -1,8 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Language" content="fr">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test Chatbot Groq</title>
     <style>
@@ -118,7 +119,7 @@
     <h1>Test d'intégration du Chatbot avec Groq</h1>
     <p>Ouvrez la console du navigateur (F12) pour voir les logs de débogage.</p>
 
-    <!-- Le chatbot sera injecté ici par le JavaScript -->
+    <!-- Le chatbot sera injectàici par le JavaScript -->
     
     <!-- Inclure les scripts nécessaires -->
     <script src="/JS/groq-config.js?v=1765190611133"></script>
@@ -147,20 +148,20 @@
             // Simuler un expert pour le test
             const testExpert = {
                 name: 'Expert en Architecture',
-                description: 'Je suis un expert en architecture logicielle et systèmes d\'information.',
+                description: 'Je suis un expert en architecture logicielle et systé¨mes d\'information.',
                 expertise: ['Architecture logicielle', 'Microservices', 'Cloud Computing', 'DevOps']
             };
 
             // Initialiser le chatbot
             window.chatbot = new Chatbot();
             
-            // Remplacer l'expert détecté par notre expert de test
+            // Remplacer l'expert détectàpar notre expert de test
             chatbot.currentExpert = testExpert;
             
             // Si le service Groq est disponible, l'initialiser avec l'expert
             if (window.groqService) {
                 window.groqService.initializeConversation(testExpert);
-                console.log('Service Groq initialisé avec succès');
+                console.log('Service Groq initialisàavec succé¨s');
             } else {
                 console.warn('Le service Groq n\'est pas disponible. Le chatbot utilisera des réponses par défaut.');
             }
@@ -168,3 +169,6 @@
     </script>
 </body>
 </html>
+
+
+

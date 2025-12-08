@@ -14,7 +14,7 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    z-index: 9999; /* Augmenté pour s'assurer qu'il est au-dessus de tout */
+    z-index: 9999; /* Augmentàpour s'assurer qu'il est au-dessus de tout */
     transform: translateY(0);
     opacity: 1;
     transition: all 0.3s ease-in-out;
@@ -186,7 +186,7 @@
     background-color: rgba(247, 247, 247, 0.85); /* Fond légèrement transparent */
     position: relative;
     z-index: 1; /* S'assure que le contenu est au-dessus du fond */
-    backdrop-filter: blur(2px); /* Léger flou pour améliorer la lisibilité sur l'image */
+    backdrop-filter: blur(2px); /* Léger flou pour améliorer la lisibilitàsur l'image */
 }
 
 /* Message de bienvenue */

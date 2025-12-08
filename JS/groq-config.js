@@ -1,6 +1,6 @@
-// Configuration pour l'API Groq
+﻿// Configuration pour l'API Groq
 const GROQ_CONFIG = {
-    // Vous devrez remplacer cette clé par votre clé d'API Groq
+    // Vous devrez remplacer cette clàpar votre clàd'API Groq
     API_KEY: ''.trim(),
     
     // Modèle Groq à utiliser (par exemple: 'mixtral-8x7b-32768' ou 'llama3-70b-8192')

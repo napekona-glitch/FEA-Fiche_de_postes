@@ -1,4 +1,4 @@
-const fs = require('fs');
+﻿const fs = require('fs');
 const path = require('path');
 
 // Dossier contenant les fichiers HTML
@@ -11,7 +11,7 @@ function updateHTMLFile(filePath) {
         
         // Vérifier si le chatbot est déjà intégré
         if (content.includes('chatbot.css') && content.includes('chatbot.js')) {
-            console.log(`Le fichier ${path.basename(filePath)} a déjà été mis à jour.`);
+            console.log(`Le fichier ${path.basename(filePath)} a déjà étàmis à jour.`);
             return;
         }
         

@@ -1,5 +1,9 @@
-// Index des fiches de poste
-const jobIndex = [
+﻿// Configuration du backend
+const SEARCH_BACKEND_URL = 'https://groq-api-proxy-public.napekona.workers.dev'; // Mode production
+// const SEARCH_BACKEND_URL = 'http://localhost:8787'; // Mode développement local
+
+// Index local des fiches de poste (backup si le backend est indisponible)
+const localJobIndex = [
     {
         id: 'urbaniste-si',
         title: 'Urbaniste SI',
@@ -21,7 +25,7 @@ const jobIndex = [
     {
         id: 'ingenieur-securite',
         title: 'Ingénieur Sécurité',
-        description: 'Expert en sécurité des systèmes d\'information et protection des données.',
+        description: 'Expert en sécuritàdes systèmes d\'information et protection des données.',
         categories: ['Sécurité', 'Conformité']
     },
     {
@@ -32,8 +36,8 @@ const jobIndex = [
     },
     {
         id: 'responsable-continuite',
-        title: 'Responsable Continuité d\'Activité',
-        description: 'Garant de la disponibilité des systèmes critiques.',
+        title: 'Responsable Continuitàd\'Activité',
+        description: 'Garant de la disponibilitàdes systèmes critiques.',
         categories: ['Sécurité', 'Infrastructure']
     },
     {
@@ -45,7 +49,7 @@ const jobIndex = [
     {
         id: 'sre',
         title: 'Site Reliability Engineer',
-        description: 'Ingénieur en fiabilité des sites et applications.',
+        description: 'Ingénieur en fiabilitàdes sites et applications.',
         categories: ['DevOps', 'Cloud']
     },
     {
@@ -79,22 +83,47 @@ function normalizeText(text) {
     return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 }
 
-// Fonction de recherche améliorée
-function performSearch(query) {
+// Fonction pour appeler le backend Cloudflare avec Groq
+async function searchWithBackend(query) {
+    try {
+        const response = await fetch(`${SEARCH_BACKEND_URL}/search`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                query: query,
+                context: 'fiches de poste architecture IT'
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error(`Erreur HTTP: ${response.status}`);
+        }
+
+        const data = await response.json();
+        return data.results || [];
+    } catch (error) {
+        console.error('Erreur lors de la communication avec le backend:', error);
+        // Fallback sur la recherche locale si le backend est indisponible
+        return performLocalSearch(query);
+    }
+}
+
+// Fonction de recherche locale (fallback)
+function performLocalSearch(query) {
     if (!query || query.trim() === '') {
-        return []; // Ne retourne aucun résultat si la recherche est vide
+        return [];
     }
     
     const searchTerm = normalizeText(query).trim();
-    const searchTerms = searchTerm.split(/\s+/); // Sépare les termes de recherche
+    const searchTerms = searchTerm.split(/\s+/);
     
-    return jobIndex.map(job => {
-        // Normalisation des champs de recherche
+    return localJobIndex.map(job => {
         const title = normalizeText(job.title);
         const description = normalizeText(job.description);
         const categories = job.categories.map(cat => normalizeText(cat)).join(' ');
         
-        // Recherche des termes dans les différents champs
         let score = 0;
         let matches = {
             title: [],
@@ -103,31 +132,34 @@ function performSearch(query) {
         };
 
         searchTerms.forEach(term => {
-            if (term.length < 2) return; // Ignore les termes trop courts
+            if (term.length < 2) return;
             
-            // Vérifie les correspondances dans le titre
             if (title.includes(term)) {
-                score += 3; // Poids plus important pour le titre
+                score += 3;
                 matches.title.push(term);
             }
             
-            // Vérifie les correspondances dans la description
             if (description.includes(term)) {
                 score += 1;
                 matches.description.push(term);
             }
             
-            // Vérifie les correspondances dans les catégories
             if (categories.includes(term)) {
-                score += 2; // Poids moyen pour les catégories
+                score += 2;
                 matches.categories.push(term);
             }
         });
 
         return { ...job, score, matches };
     })
-    .filter(job => job.score > 0) // Ne garde que les résultats avec au moins une correspondance
-    .sort((a, b) => b.score - a.score); // Trie par score décroissant
+    .filter(job => job.score > 0)
+    .sort((a, b) => b.score - a.score);
+}
+
+// Fonction de recherche améliorée
+async function performSearch(query) {
+    const results = await searchWithBackend(query);
+    return results;
 }
 
 // Fonction pour mettre en surbrillance les correspondances
@@ -161,7 +193,7 @@ function displaySearchResults(results, query) {
     if (!results || results.length === 0) {
         resultsContainer.innerHTML = `
             <div class="no-results">
-                <p>Aucun résultat trouvé pour votre recherche : <strong>${query}</strong></p>
+                <p>Aucun résultat trouvàpour votre recherche : <strong>${query}</strong></p>
                 <p>Essayez avec des termes différents ou consultez la liste complète ci-dessous.</p>
             </div>
         `;
@@ -212,10 +244,10 @@ function displaySearchResults(results, query) {
     resultsContainer.innerHTML = html;
 }
 
-// Gestionnaire d'événement pour la recherche
-function handleSearch() {
+// Gestionnaire d'événement pour la recherche (async)
+async function handleSearch() {
     const query = searchInput.value.trim();
-    console.log('Recherche pour:', query); // Debug
+    console.log('Recherche pour:', query);
     
     if (query.length < 2) {
         // Si la recherche est trop courte, on efface les résultats
@@ -226,14 +258,40 @@ function handleSearch() {
         return;
     }
     
-    const results = performSearch(query);
-    console.log('Résultats trouvés:', results); // Debug
-    displaySearchResults(results, query);
+    // Afficher un indicateur de chargement
+    const main = document.querySelector('main');
+    let resultsContainer = document.getElementById('searchResults');
+    
+    if (!resultsContainer) {
+        resultsContainer = document.createElement('div');
+        resultsContainer.id = 'searchResults';
+        resultsContainer.className = 'search-results';
+        main.insertBefore(resultsContainer, main.firstChild);
+    }
+    
+    resultsContainer.innerHTML = `
+        <div class="search-loading">
+            <p>Recherche en cours...</p>
+        </div>
+    `;
+    
+    try {
+        const results = await performSearch(query);
+        console.log('Résultats trouvés:', results);
+        displaySearchResults(results, query);
+    } catch (error) {
+        console.error('Erreur lors de la recherche:', error);
+        resultsContainer.innerHTML = `
+            <div class="search-error">
+                <p>Une erreur est survenue lors de la recherche. Veuillez réessayer.</p>
+            </div>
+        `;
+    }
 }
 
 // Initialisation
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('Script de recherche amélioré chargé'); // Debug
+    console.log('Script de recherche amélioràchargé'); // Debug
     
     const searchInput = document.getElementById('searchInput');
     const searchButton = document.getElementById('searchButton');
