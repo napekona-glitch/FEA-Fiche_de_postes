@@ -1,23 +1,25 @@
 [build]
+  command = "npm install"
   publish = "."
   functions = "netlify/functions"
 
 [build.environment]
   NODE_VERSION = "16"
+  NPM_FLAGS = "--prefix netlify/functions"
+  NPM_TOKEN = "npm_1234567890"
+
+[functions]
+  node_bundler = "esbuild"
 
 # Règles de réécriture pour le routage côté client
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-  force = false  # Important pour permettre la navigation vers d'autres pages
+  force = false
 
 # Règles pour les appels API
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"
   status = 200
-
-[dev]
-  command = "python -m http.server 8000"
-  port = 8000
