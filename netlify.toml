@@ -2,6 +2,7 @@
   command = "cd netlify/functions && npm install"
   publish = "."
   functions = "netlify/functions"
+  base = "/"
 
 [build.environment]
   NODE_VERSION = "16"
@@ -9,7 +10,17 @@
 [functions]
   node_bundler = "esbuild"
 
-# Règles de réécriture pour les fichiers statiques
+# Règles pour les fichiers statiques (priorité haute)
+[[redirects]]
+  from = "/CSS/*"
+  to = "/CSS/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/JS/*"
+  to = "/JS/:splat"
+  status = 200
+
 [[redirects]]
   from = "/*.css"
   to = "/:splat"
@@ -27,17 +38,6 @@
   to = "/assets/:splat"
   status = 200
   force = false
-
-# Règles pour les fichiers avec cache-busting
-[[redirects]]
-  from = "/CSS/*"
-  to = "/CSS/:splat"
-  status = 200
-
-[[redirects]]
-  from = "/JS/*"
-  to = "/JS/:splat"
-  status = 200
 
 # Règles pour les pages HTML existantes
 [[redirects]]
