@@ -1,12 +1,10 @@
 [build]
-  command = "npm install"
+  command = "cd netlify/functions && npm install"
   publish = "."
   functions = "netlify/functions"
 
 [build.environment]
   NODE_VERSION = "16"
-  NPM_FLAGS = "--prefix netlify/functions"
-  NPM_TOKEN = "npm_1234567890"
 
 [functions]
   node_bundler = "esbuild"
