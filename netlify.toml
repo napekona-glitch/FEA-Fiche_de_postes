@@ -1,63 +1,55 @@
+
+# netlify.toml — Site statique avec pages HTML
+
 [build]
-  command = "cd netlify/functions && npm install"
-  publish = "."
+  # Si tu n'as pas de build (HTML pur), tu peux laisser vide ou juste installer les Functions :
+  # command = "cd netlify/functions && npm ci"
+  # Si tu as un build (ex. Sass, bundler), adapte :
+  command = "npm ci && npm run build && cd netlify/functions && npm ci"
+  publish = "."                     # ou "dist" si tu as un dossier de build
   functions = "netlify/functions"
-  base = "/"
 
 [build.environment]
-  NODE_VERSION = "16"
+  NODE_VERSION = "20"               # LTS recommandé
 
 [functions]
   node_bundler = "esbuild"
 
-# Règles pour les fichiers statiques (priorité haute)
-[[redirects]]
-  from = "/CSS/*"
-  to = "/CSS/:splat"
-  status = 200
-
-[[redirects]]
-  from = "/JS/*"
-  to = "/JS/:splat"
-  status = 200
-
-[[redirects]]
-  from = "/*.css"
-  to = "/:splat"
-  status = 200
-  force = false
-
-[[redirects]]
-  from = "/*.js"
-  to = "/:splat"
-  status = 200
-  force = false
-
-[[redirects]]
-  from = "/assets/*"
-  to = "/assets/:splat"
-  status = 200
-  force = false
-
-# Règles pour les pages HTML existantes
+# ✅ Servir les fichiers HTML existants
 [[redirects]]
   from = "/*.html"
   to = "/:splat"
   status = 200
 
-# Règle pour la racine
+# ✅ Servir les assets CSS/JS tels quels
 [[redirects]]
-  from = "/"
-  to = "/index.html"
+  from = "/*.css"
+  to = "/:splat"
   status = 200
 
-# Règles pour les appels API
+[[redirects]]
+  from = "/*.js"
+  to = "/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/assets/*"
+  to = "/assets/:splat"
+  status = 200
+
+# ✅ API → Netlify Functions
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"
   status = 200
 
-# Règle de réécriture pour le routage côté client (toujours en dernier)
+# ✅ Racine → index.html
+[[redirects]]
+  from = "/"
+  to = "/index.html"
+  status = 200
+
+# ✅ Fallback (dernier) pour routes non trouvées
 [[redirects]]
   from = "/*"
   to = "/index.html"
