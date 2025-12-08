@@ -61,6 +61,12 @@ body::before {
     padding: 0 20px;
 }
 
+/* Assurer que tous les liens sont cliquables */
+a {
+    position: relative;
+    z-index: 10;
+}
+
 /* Header */
 .header {
     background: linear-gradient(135deg, #0f4c75, #1b6ca8);
