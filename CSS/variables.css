@@ -1,0 +1,42 @@
+/* Variables CSS rafraîchies pour une meilleure harmonie */
+:root {
+  /* Palette principale raffinée */
+  --primary-dark: #E8C15E;    /* Jaune doré plus doux */
+  --primary-medium: #F0B23A;  /* Jaune doré chaud */
+  --primary-light: #FAE7B5;   /* Jaune pâle très doux */
+  
+  /* Accents redéfinis */
+  --accent-secondary: #D4A93B; /* Doré plus profond */
+  --accent-light: #F5EDD6;     /* Crème chaud */
+  
+  /* Nouveaux tons neutres */
+  --bg-white: #FFFFFF;
+  --bg-light: #FFFBF0;         /* Blanc cassé légèrement doré */
+  --bg-lighter: #FFFDF8;       /* Très léger pour les fonds */
+  
+  /* Hiérarchie de textes améliorée */
+  --text-primary: #2A2A2A;     /* Noir profond */
+  --text-secondary: #4A4A4A;   /* Gris anthracite */
+  --text-tertiary: #6B6B6B;    /* Gris moyen pour texte secondaire */
+  --text-light: #5E4E1F;       /* Brun doré pour contraste */
+  
+  /* Accents fonctionnels plus harmonieux */
+  --accent-success: #7CB342;   /* Vert mousse */
+  --accent-warning: #FFB300;   /* Jaune moutarde */
+  --accent-error: #E64A19;     /* Terre cuite */
+  --accent-info: #0288D1;      /* Bleu canard */
+  
+  /* Dégradés raffinés */
+  --gradient-primary: linear-gradient(135deg, #F0D18C 0%, #E8C15E 100%);
+  --gradient-hover: linear-gradient(135deg, #E8C15E 0%, #D4A93B 100%);
+  --gradient-light: linear-gradient(135deg, #FDF8EC 0%, #FAE7B5 100%);
+  --gradient-subtle: linear-gradient(to right, #FFFBF0 0%, #FFFFFF 50%, #FFFBF0 100%);
+  
+  /* Ombres et effets */
+  --shadow-light: 0 2px 8px rgba(232, 184, 78, 0.15);
+  --shadow-medium: 0 4px 12px rgba(232, 184, 78, 0.2);
+  --shadow-strong: 0 8px 24px rgba(232, 184, 78, 0.25);
+  
+  /* Ajout d'une variable pour les bordures */
+  --border-color: rgba(232, 184, 78, 0.2);
+}
