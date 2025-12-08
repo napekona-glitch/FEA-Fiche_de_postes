@@ -28,6 +28,17 @@
   status = 200
   force = false
 
+# Règles pour les fichiers avec cache-busting
+[[redirects]]
+  from = "/CSS/*"
+  to = "/CSS/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/JS/*"
+  to = "/JS/:splat"
+  status = 200
+
 # Règles pour les pages HTML existantes
 [[redirects]]
   from = "/*.html"
