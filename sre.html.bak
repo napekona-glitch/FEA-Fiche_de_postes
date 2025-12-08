@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Language" content="fr">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.2 SRE (Ingénieur de fiabilitàde sites)** - FEA</title>
+    <link rel="stylesheet" href="CSS/style.css">
+
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>FEA</h1>
+                <p>Filié¨re d'Excelence Architecture</p>
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="index.html">† Retour é  l'index</a></li>
+                    <li><a href="#evaluation">évaluation Technique</a></li>
+                    <li><a href="#fiche-poste">Fiche de Poste</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- Profil Header -->
+        <section class="profile-header-section">
+            <div class="container">
+                <div class="profile-header">
+                    <h1>4.2 SRE (Ingénieur de fiabilitàde sites)**</h1>
+                    <span class="badge available">Disponible</span>
+                </div>
+                <div class="breadcrumb">
+                    <a href="index.html">Index</a> †’
+                    <a href="index.html#devops">4. DevOps & SRE</a> †’
+                    <span>4.2 SRE (Ingénieur de fiabilitàde sites)**</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section évaluation Technique -->
+        <section id="evaluation" class="section">
+            <div class="container">
+                <h2>évaluation Technique</h2>
+                
+                <div class="competence-domain">
+                    <h3>Fiabilità& résilience des systé¨mes</h3>
+                    <p>Définition de SLO / SLA / SLI. Gestion du "budget d'erreur" et trade-offs disponibilità/ rapidité. Conception d'architectures tolérantes aux pannes, redondance, basculement. Plan de reprise / continuitàde service.</p>
+                </div>
+
+                <div class="competence-domain">
+                    <h3>Surveillance, observabilità& alerting</h3>
+                    <p>Mise en place d'outils de monitoring (Prometheus, Grafana, ELK, Datadog€¦). Instrumentation (métriques, traces, logs). Alertes, seuils, corrélations, dashboards. Analyse post-incident, RCA (Root Cause Analysis).</p>
+                </div>
+
+                <div class="competence-domain">
+                    <h3>Automatisation & infrastructure as code</h3>
+                    <p>Automatisation des té¢ches opérationnelles. IaC (Terraform, Ansible, CloudFormation, etc.). Scripting (Python, Bash, Go€¦) pour orchestration d'opérations. GitOps / pipelines automatisés.</p>
+                </div>
+
+                <div class="competence-domain">
+                    <h3>Déploiement & pipelines CI/CD</h3>
+                    <p>Conception / supervision de pipelines CI/CD robustes. Intégration de tests automatisés, sécurité, validations. Déploiements blue/green, canary, rolling updates.</p>
+                </div>
+
+                <div class="competence-domain">
+                    <h3>Systé¨mes & infrastructure</h3>
+                    <p>Maé®trise des systé¨mes UNIX / Linux. Connaissances réseaux (TCP/IP, DNS, load balancers, etc.). Expérience en cloud (AWS / Azure / GCP) et en environnements hybrides. Containers & orchestration (Docker, Kubernetes).</p>
+                </div>
+
+                <div class="competence-domain">
+                    <h3>Gestion des incidents & support</h3>
+                    <p>Participation aux astreintes, gestion des incidents critiques. Restauration rapide du service. Analyse post-mortem et mise en place de correctifs. Culture de retour d'expérience.</p>
+                </div>
+
+                <div class="competence-domain">
+                    <h3>Sécuritàopérationnelle</h3>
+                    <p>Sécuritàby design : IAM, chiffrement, contré´le d'accé¨s. Audits de sécurité, remédiation. Conformitàaux normes / réglementations (RGPD, etc.).</p>
+                </div>
+
+                <div class="competence-domain">
+                    <h3>Soft skills & communication</h3>
+                    <p>Travail transversal avec dev / ops / métiers. Restitution aux parties prenantes non techniques. Sens de priorisation, pragmatisme. Formation & mentorat d'autres ingénieurs.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Fiche de Poste -->
+        <section id="fiche-poste" class="section">
+            <div class="container">
+                <h2>Fiche de Poste pour Agent de talent</h2>
+                
+                <div class="mission-description">
+                    <h3>Vous étes SRE (Ingénieur de fiabilitàde sites) SI et vous recherchez une mission en freelance ?</h3>
+                    <p>Nous avons le projet qu'il vous faut pour l'un de nos clients basés é  Niort dans le secteur des assurances.</p>
+                </div>
+
+                <div class="mission-expectations">
+                    <h3>Ce que l'on attend de la personne (type de mission)</h3>
+                    <p>Le SRE est chargàde :</p>
+                    <ul>
+                        <li>Concevoir des systé¨mes fiables et résilients, avec des architectures tolérantes aux pannes et des plans de continuité</li>
+                        <li>Définir et suivre les indicateurs de fiabilità(SLO, SLA, SLI) et gérer le budget d'erreur</li>
+                        <li>Mettre en place des outils de monitoring et d'observabilità(Prometheus, Grafana, ELK, Datadog€¦)</li>
+                        <li>Automatiser les opérations via Infrastructure as Code et scripting (Python, Bash, Go)</li>
+                        <li>Superviser les pipelines CI/CD, intégrer les tests et déploiements progressifs (blue/green, canary€¦)</li>
+                        <li>Gérer les incidents critiques, assurer la restauration rapide et l'analyse post-mortem</li>
+                        <li>Intégrer la sécuritàopérationnelle dans les systé¨mes et garantir la conformité</li>
+                    </ul>
+                </div>
+
+                <div class="profile-requirements">
+                    <h3>Ce que la personne est (compétences attendues)</h3>
+                    <p>Un(e) SRE avec :</p>
+                    <ul>
+                        <li>Une expérience de 3 é  5 ans ou plus en DevOps, opérations ou ingénierie fiabilité</li>
+                        <li>Une formation Bac+5 en informatique ou ingénierie</li>
+                        <li>Une maé®trise des systé¨mes Linux/Unix, réseaux, cloud (AWS, Azure, GCP), conteneurs (Docker, Kubernetes)</li>
+                        <li>Des compétences en monitoring, alerting, instrumentation, et analyse RCA</li>
+                        <li>Une capacitàé  automatiser les té¢ches, gérer les incidents et optimiser la disponibilité</li>
+                        <li>Des qualités personnelles : pragmatisme, esprit d'équipe, communication transverse, capacitàé  prioriser</li>
+                        <li>Une vision fiabilitàintégrée dans l'ensemble du cycle de vie des systé¨mes</li>
+                    </ul>
+                </div>
+
+                <div class="rate-info">
+                    <h3>Taux Journalier Moyen (TJM)</h3>
+                    <p class="rate">450 é  650 ‚¬/jour HT</p>
+                </div>
+
+                <div class="contact-section">
+                    <h3>Intéressé(e) par cette opportunità?</h3>
+                    <p>Envoyez-nous votre CV et nous vous recontacterons rapidement.</p>
+                      <button id="publishBtn" class="contact-btn">Publier l'offre</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 FEA - Filié¨re Architecture. Tous droits réservés.</p>
+        </div>
+    </footer>
+<!-- Chatbot -->
+  <!-- Bouton flottant pour ouvrir le chat -->
+<button id="chatbot-toggle" class="chatbot-toggle">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span class="chatbot-notification" id="chat-notification"></span>
+</button>
+
+<!-- Conteneur du chatbot (cachàpar défaut) -->
+<div id="chatbot-container">
+    <div class="chatbot-header">
+        <div class="header-content">
+            <div class="chatbot-avatar">
+                <img src="/https://img.icons8.com/color/96/000000/chatbot.png" alt="Chatbot">
+            </div>
+            <div class="chatbot-info">
+                <h3>Assistant FEA</h3>
+                <p>En ligne</p>
+            </div>
+        </div>
+        <button id="minimize-chat" class="icon-btn">ˆ’</button>
+        <button id="close-chat" class="icon-btn">é—</button>
+    </div>
+    
+    <div class="chatbot-messages" id="chat-messages">
+        <div class="welcome-message">
+            <p>👋Bonjour ! Je suis votre assistant virtuel. Comment puis-je vous aider aujourd'hui ?</p>
+            <p>Vous pouvez me poser des questions sur les fiches de poste, les compétences requises ou tout autre sujet liàé  la filié¨re architecture.</p>
+        </div>
+    </div>
+    
+    <div class="chatbot-input">
+        <input type="text" id="user-input" placeholder="Posez votre question...">
+        <button id="send-message">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </div>
+</div>
+
+<script src="JS/chatbot.js"></script>
+    <script src="JS/email-service.js"></script>
+    <script src="JS/script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

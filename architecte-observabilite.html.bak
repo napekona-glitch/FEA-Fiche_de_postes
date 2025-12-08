@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Language" content="fr">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.4 Architecte Observabilità- FEA</title>
+    <link rel="stylesheet" href="CSS/style.css">
+
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>FEA</h1>
+                <p>Filié¨re d'Excelence Architecture</p>
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="index.html">† Retour é  l'index</a></li>
+                    <li><a href="#evaluation">évaluation Technique</a></li>
+                    <li><a href="#fiche-poste">Fiche de Poste</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- Profil Header -->
+        <section class="profile-header-section">
+            <div class="container">
+                <div class="profile-header">
+                    <h1>4.4 Architecte Observabilité</h1>
+                    <span class="badge available">Disponible</span>
+                </div>
+                <div class="breadcrumb">
+                    <a href="index.html">Index</a> †’
+                    <a href="index.html#devops">4. DevOps & SRE</a> †’
+                    <span>4.4 Architecte Observabilité</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section évaluation Technique -->
+        <section id="evaluation" class="section">
+            <div class="container">
+                <h2>évaluation Technique</h2>
+                
+                <div class="competence-domain">
+                    <h3>Vision stratégique & gouvernance de l'observabilité</h3>
+                    <p>Définir la stratégie d'observabilitàd'une organisation (logs, métriques, traces). élaborer des principes, standards et politique d'observabilité. Piloter la gouvernance des données de télémétrie et de monitoring.</p>
+                </div>
+
+                <div class="competence-domain">
+                    <h3>Architecture technique & plateforme d'observabilité</h3>
+                    <p>Concevoir l'architecture cible de la plateforme observabilità(stack observabilité). Sélection des outils (Prometheus, Grafana, ELK, Jaeger, Tempo, etc.). Mettre en place des pipelines de collecte, ingestion et transformation des données.</p>
+                </div>
+
+                <div class="competence-domain">
+                    <h3>Instrumentation & instrumentation distribuée</h3>
+                    <p>Définir les points d'instrumentation dans les applications (apports des bibliothé¨ques, instrumentation manuelle). Implémenter la collecte de métriques, logs, traces. Instrumentation dans les micro-services, conteneurs, fonctions serverless.</p>
+                </div>
+
+                <div class="competence-domain">
+                    <h3>Intégration & interopérabilité</h3>
+                    <p>Intégration avec les systé¨mes existants (APIs, microservices, middleware). Interopérabilitàentre différents outils d'observabilité. Approche découplée : ingestion via agents, sidecars, agents externes.</p>
+                </div>
+
+                <div class="competence-domain">
+                    <h3>Monitoring, alerting & analyses</h3>
+                    <p>Mise en place de dashboards, alertes intelligentes. Analyse des anomalies, corrélations entre logs / métriques / traces. Root Cause Analysis (RCA). Exploration interactive des données et recherche ad hoc dans la télémétrie.</p>
+                </div>
+
+                <div class="competence-domain">
+                    <h3>Résilience, performance & coé»t</h3>
+                    <p>Dimensionnement et scalabilitàde la plateforme observabilité. Tolérance aux pannes, haute disponibilité. Stratégies de rétention, d'agrégation et de downsampling. Optimisation des coé»ts liés au stockage et traitement des données.</p>
+                </div>
+
+                <div class="competence-domain">
+                    <h3>Sécurità& conformitàde la télémétrie</h3>
+                    <p>Chiffrement des pipelines, gestion des accé¨s (IAM). Masquage des données sensibles dans les logs et traces. Respect des contraintes légales ou réglementaires (RGPD, confidentialité).</p>
+                </div>
+
+                <div class="competence-domain">
+                    <h3>Automatisation & Infrastructure as Code</h3>
+                    <p>Automatisation de la mise en place de la plateforme observabilità(IaC, scripts). Déploiement automatisàdes agents d'observabilité. Maintenance / mise é  jour de la plateforme observabilitàvia pipeline.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Fiche de Poste -->
+        <section id="fiche-poste" class="section">
+            <div class="container">
+                <h2>Fiche de Poste pour Agent de talent</h2>
+                
+                <div class="mission-description">
+                    <h3>Vous étes Architecte ObservabilitàSI et vous recherchez une mission en freelance ?</h3>
+                    <p>Nous avons le projet qu'il vous faut pour l'un de nos clients basés é  Niort dans le secteur des assurances.</p>
+                </div>
+
+                <div class="mission-expectations">
+                    <h3>Ce que l'on attend de la personne (type de mission)</h3>
+                    <p>L'Architecte Observabilitàest chargàde :</p>
+                    <ul>
+                        <li>Définir la stratégie d'observabilitàd'une organisation (logs, métriques, traces)</li>
+                        <li>Concevoir l'architecture technique de la plateforme d'observabilitàet sélectionner les outils (Prometheus, Grafana, ELK, Jaeger€¦)</li>
+                        <li>Mettre en place l'instrumentation distribuée dans les applications, microservices et environnements cloud</li>
+                        <li>Intégrer les systé¨mes existants et assurer l'interopérabilitàentre les outils</li>
+                        <li>Superviser les données de télémétrie, créer des dashboards, alertes et analyser les anomalies</li>
+                        <li>Optimiser la résilience, la performance et les coé»ts liés é  la collecte et au stockage des données</li>
+                        <li>Automatiser le déploiement de la plateforme via Infrastructure as Code</li>
+                    </ul>
+                </div>
+
+                <div class="profile-requirements">
+                    <h3>Ce que la personne est (compétences attendues)</h3>
+                    <p>Un(e) Architecte Observabilitàavec :</p>
+                    <ul>
+                        <li>Une expérience significative (5 ans+) en monitoring, instrumentation ou SRE</li>
+                        <li>Une formation Bac+5 en informatique ou équivalent</li>
+                        <li>Une maé®trise des outils d'observabilità: Prometheus, Grafana, ELK, Jaeger, Tempo€¦</li>
+                        <li>Des compétences en infrastructure, développement, cloud et microservices</li>
+                        <li>Une capacitàé  vulgariser les concepts techniques, animer des ateliers et fédérer les équipes</li>
+                        <li>Des qualités personnelles : leadership transverse, esprit de synthé¨se, autonomie</li>
+                        <li>Une connaissance des enjeux de sécuritàet conformità(RGPD, chiffrement, IAM)</li>
+                    </ul>
+                </div>
+
+                <div class="rate-info">
+                    <h3>Taux Journalier Moyen (TJM)</h3>
+                    <p class="rate">700 é  900 ‚¬/jour HT</p>
+                </div>
+
+                <div class="contact-section">
+                    <h3>Intéressé(e) par cette opportunità?</h3>
+                    <p>Envoyez-nous votre CV et nous vous recontacterons rapidement.</p>
+                     <button id="publishBtn" class="contact-btn">Publier l'offre</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 FEA - Filié¨re Architecture. Tous droits réservés.</p>
+        </div>
+    </footer>
+<!-- Chatbot -->
+  <!-- Bouton flottant pour ouvrir le chat -->
+<button id="chatbot-toggle" class="chatbot-toggle">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span class="chatbot-notification" id="chat-notification"></span>
+</button>
+
+<!-- Conteneur du chatbot (cachàpar défaut) -->
+<div id="chatbot-container">
+    <div class="chatbot-header">
+        <div class="header-content">
+            <div class="chatbot-avatar">
+                <img src="https://img.icons8.com/color/96/000000/chatbot.png" alt="Chatbot">
+            </div>
+            <div class="chatbot-info">
+                <h3>Assistant FEA</h3>
+                <p>En ligne</p>
+            </div>
+        </div>
+        <button id="minimize-chat" class="icon-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+        </button>
+    </div>
+    
+    <div class="chatbot-messages" id="chat-messages">
+        <div class="welcome-message">
+            <p>👋Bonjour ! Je suis votre assistant virtuel. Comment puis-je vous aider aujourd'hui ?</p>
+            <p>Vous pouvez me poser des questions sur les fiches de poste, les compétences requises ou tout autre sujet liàé  la filié¨re architecture.</p>
+        </div>
+    </div>
+    
+    <div class="chatbot-input">
+        <input type="text" id="user-input" placeholder="Posez votre question...">
+        <button id="send-message">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </div>
+</div>
+
+<script src="JS/chatbot.js"></script>
+    <script src="JS/email-service.js"></script>
+    <script src="JS/script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
