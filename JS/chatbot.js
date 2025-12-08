@@ -39,6 +39,375 @@ const experts = {
             'Gestion des identités'
         ]
     }
+    ,
+    'architecte-cloud': {
+        name: 'Expert en Architecture Cloud',
+        description: 'Je suis spécialisé en architecture cloud, avec une expertise en conception de solutions scalables et sécurisées sur AWS, Azure et GCP.',
+        expertise: [
+            'Architecture Cloud Native',
+            'Microservices et Conteneurisation',
+            'Serverless et Functions as a Service',
+            'DevOps et CI/CD',
+            'Sécurité Cloud',
+            'Migration vers le Cloud',
+            'Optimisation des coûts',
+            'Multi-cloud et Hybrid Cloud'
+        ]
+    },
+    'architecte-devops': {
+        name: 'Expert en DevOps',
+        description: 'Je me spécialise dans l\'optimisation des processus de développement et d\'exploitation, avec une focus sur l\'automatisation et la livraison continue.',
+        expertise: [
+            'CI/CD Pipelines',
+            'Infrastructure as Code',
+            'Container Orchestration (Kubernetes, Docker)',
+            'Monitoring et Observabilité',
+            'Automatisation des tests',
+            'Configuration Management',
+            'Site Reliability Engineering',
+            'Performance et Scalabilité'
+        ]
+    }
+    ,
+    'architecte-data': {
+        name: 'Expert en Architecture Data',
+        description: 'Je suis spécialisé en architecture de données, avec une expertise en conception de pipelines et gouvernance des données.',
+        expertise: [
+            'Data Warehousing',
+            'Data Lakes',
+            'ETL/ELT Pipelines',
+            'Data Governance',
+            'Business Intelligence',
+            'Big Data Technologies',
+            'Data Quality',
+            'Streaming Architecture'
+        ]
+    },
+    'ingenieur-data': {
+        name: 'Ingénieur Data',
+        description: 'Je suis ingénieur data spécialisé dans le développement et la maintenance des infrastructures de données.',
+        expertise: [
+            'Développement ETL',
+            'Pipeline Data',
+            'Data Engineering',
+            'Optimisation des requêtes',
+            'Data Processing',
+            'Real-time Data',
+            'Cloud Data Services',
+            'Data Architecture'
+        ]
+    }
+    ,
+    'architecte-applicatif': {
+        name: 'Expert en Architecture Applicative',
+        description: 'Je suis spécialisé en architecture applicative, avec une expertise en conception de systèmes logiciels robustes et évolutifs.',
+        expertise: [
+            'Conception logicielle',
+            'Patterns d\'architecture',
+            'Microservices',
+            'Architecture orientée services',
+            'API Design',
+            'Intégration système',
+            'Performance applicative',
+            'Sécurité des applications'
+        ]
+    },
+    'architecte-infrastructure': {
+        name: 'Expert en Architecture Infrastructure',
+        description: 'Je suis spécialisé en architecture infrastructure, avec une expertise en conception de systèmes TI fiables et performants.',
+        expertise: [
+            'Infrastructure physique et virtuelle',
+            'Network Architecture',
+            'Stockage et sauvegarde',
+            'Virtualisation',
+            'Haute disponibilité',
+            'Monitoring infrastructure',
+            'Sécurité réseau',
+            'Cloud hybride'
+        ]
+    },
+    'architecte-reseau': {
+        name: 'Expert en Architecture Réseau',
+        description: 'Je suis spécialisé en architecture réseau, avec une expertise en conception de infrastructures de communication sécurisées et performantes.',
+        expertise: [
+            'Conception réseau',
+            'Sécurité réseau',
+            'Network Virtualization',
+            'SD-WAN',
+            'Load Balancing',
+            'Firewall et segmentation',
+            'Monitoring réseau',
+            'Optimisation performance'
+        ]
+    },
+    'architecte-securite': {
+        name: 'Expert en Architecture Sécurité',
+        description: 'Je suis spécialisé en architecture sécurité, avec une expertise en protection des systèmes d\'information et gestion des risques.',
+        expertise: [
+            'Sécurité des applications',
+            'Sécurité infrastructure',
+            'Gestion des identités',
+            'Conformité réglementaire',
+            'Tests d\'intrusion',
+            'Politiques de sécurité',
+            'Cryptographie',
+            'Incident Response'
+        ]
+    },
+    'architecte-entreprise': {
+        name: 'Expert en Architecture d\'Entreprise',
+        description: 'Je suis spécialisé en architecture d\'entreprise, avec une expertise en alignement stratégique des SI sur les objectifs métier.',
+        expertise: [
+            'Gouvernance SI',
+            'Urbanisation des SI',
+            'Transformation numérique',
+            'Architecture cible',
+            'Cartographie applicative',
+            'Business Architecture',
+            'Stratégie SI',
+            'Portfolio Management'
+        ]
+    }
+    ,
+    'ingenieur-devops': {
+        name: 'Ingénieur DevOps',
+        description: 'Je suis ingénieur DevOps spécialisé dans l\'automatisation des processus de développement et d\'exploitation.',
+        expertise: [
+            'CI/CD Pipelines',
+            'Infrastructure as Code',
+            'Container Orchestration',
+            'Monitoring et Observabilité',
+            'Automatisation',
+            'Configuration Management',
+            'Cloud Native',
+            'Performance Engineering'
+        ]
+    },
+    'ingenieur-securite': {
+        name: 'Ingénieur Sécurité',
+        description: 'Je suis ingénieur sécurité spécialisé dans la protection des systèmes d\'information et la gestion des vulnérabilités.',
+        expertise: [
+            'Sécurité des applications',
+            'Sécurité réseau',
+            'Tests de pénétration',
+            'Gestion des vulnérabilités',
+            'SIEM et monitoring',
+            'Cryptographie',
+            'Conformité',
+            'Incident Response'
+        ]
+    },
+    'ingenieur-reseau-cloud': {
+        name: 'Ingénieur Réseau et Cloud',
+        description: 'Je suis spécialisé en infrastructure réseau et solutions cloud hybrides.',
+        expertise: [
+            'Architecture Cloud',
+            'Network Design',
+            'Cloud Networking',
+            'SDN et SD-WAN',
+            'Sécurité Cloud',
+            'Migration Cloud',
+            'Optimisation coûts',
+            'Multi-cloud'
+        ]
+    },
+    'responsable-continuite': {
+        name: 'Responsable Continuité d\'Activité',
+        description: 'Je suis responsable de la continuité d\'activité, spécialisé dans la garantie de disponibilité des services critiques.',
+        expertise: [
+            'Business Continuity Planning',
+            'Disaster Recovery',
+            'Risk Assessment',
+            'Crisis Management',
+            'High Availability',
+            'Backup Strategies',
+            'RTO/RPO Management',
+            'Compliance Audit'
+        ]
+    },
+    'responsable-gouvernance': {
+        name: 'Responsable Gouvernance SI',
+        description: 'Je suis responsable de la gouvernance SI, spécialisé dans l\'alignement des technologies avec les objectifs business.',
+        expertise: [
+            'IT Governance',
+            'COBIT Framework',
+            'Risk Management',
+            'Compliance',
+            'Audit SI',
+            'Policy Management',
+            'Strategic Planning',
+            'Performance Measurement'
+        ]
+    },
+    'specialiste-iam': {
+        name: 'Spécialiste IAM',
+        description: 'Je suis spécialiste en gestion des identités et des accès, expert en sécurité et conformité.',
+        expertise: [
+            'Identity Management',
+            'Access Control',
+            'SSO et SAML',
+            'Multi-factor Authentication',
+            'Privileged Access Management',
+            'Identity Governance',
+            'Directory Services',
+            'Federation'
+        ]
+    },
+    'expert-integration': {
+        name: 'Expert en Intégration',
+        description: 'Je suis expert en intégration de systèmes, spécialisé dans la connexion d\'applications et de données.',
+        expertise: [
+            'API Management',
+            'ESB et Microservices',
+            'Data Integration',
+            'B2B Integration',
+            'Message Queuing',
+            'Event-driven Architecture',
+            'Hybrid Integration',
+            'Integration Patterns'
+        ]
+    },
+    'lead-tech': {
+        name: 'Lead Technique',
+        description: 'Je suis lead technique, spécialisé dans l\'encadrement d\'équipes et la cohérence technique des projets.',
+        expertise: [
+            'Technical Leadership',
+            'Architecture Decisions',
+            'Team Management',
+            'Code Review',
+            'Technical Strategy',
+            'Mentoring',
+            'Quality Assurance',
+            'Innovation Management'
+        ]
+    },
+    'sre': {
+        name: 'Site Reliability Engineer',
+        description: 'Je suis SRE spécialisé dans la fiabilité, la performance et la scalabilité des systèmes.',
+        expertise: [
+            'Reliability Engineering',
+            'Monitoring et Observabilité',
+            'Incident Management',
+            'Performance Tuning',
+            'Capacity Planning',
+            'Error Budgets',
+            'Automation',
+            'Chaos Engineering'
+        ]
+    },
+    'urbaniste-si': {
+        name: 'Urbaniste SI',
+        description: 'Je suis urbaniste SI spécialisé dans l\'alignement stratégique du système d\'information.',
+        expertise: [
+            'Urbanisation SI',
+            'Cartographie applicative',
+            'Architecture d\'entreprise',
+            'Transformation digitale',
+            'Gestion du patrimoine applicatif',
+            'Stratégie SI',
+            'Business Alignment',
+            'Portfolio Management'
+        ]
+    }
+    ,
+    'architecte-solution': {
+        name: 'Expert en Architecture Solution',
+        description: 'Je suis spécialisé en architecture solution, expert en conception de systèmes techniques intégrés.',
+        expertise: [
+            'Solution Architecture',
+            'Technical Design',
+            'Integration Patterns',
+            'Performance Engineering',
+            'Security Architecture',
+            'Cloud Solutions',
+            'API Design',
+            'System Integration'
+        ]
+    },
+    'architecte-solution-ia': {
+        name: 'Expert en Architecture Solution IA',
+        description: 'Je suis spécialisé en architecture solution IA, expert en conception de systèmes d\'intelligence artificielle.',
+        expertise: [
+            'AI/ML Architecture',
+            'Data Pipeline Design',
+            'Model Deployment',
+            'MLOps',
+            'Data Engineering',
+            'Cloud AI Services',
+            'Model Monitoring',
+            'Ethical AI'
+        ]
+    },
+    'architecte-observabilite': {
+        name: 'Expert en Architecture Observabilité',
+        description: 'Je suis spécialisé en architecture observabilité, expert en monitoring et métriques systèmes.',
+        expertise: [
+            'Monitoring Strategy',
+            'Logging Architecture',
+            'Metrics Design',
+            'Distributed Tracing',
+            'APM Solutions',
+            'Observability Patterns',
+            'Performance Monitoring',
+            'Alert Engineering'
+        ]
+    },
+    'architecte-poste-travail': {
+        name: 'Expert en Architecture Poste de Travail',
+        description: 'Je suis spécialisé en architecture poste de travail, expert en infrastructures utilisateur.',
+        expertise: [
+            'Workplace Architecture',
+            'VDI et Remote Desktop',
+            'Endpoint Management',
+            'Mobile Device Management',
+            'User Experience',
+            'Workplace Security',
+            'Application Virtualization',
+            'Digital Workspace'
+        ]
+    },
+    'ingenieur-automatisation-tests': {
+        name: 'Ingénieur Automatisation Tests',
+        description: 'Je suis spécialisé en automatisation des tests, expert en assurance qualité logicielle.',
+        expertise: [
+            'Test Automation',
+            'CI/CD Testing',
+            'Performance Testing',
+            'Security Testing',
+            'Test Strategy',
+            'Quality Assurance',
+            'Test Frameworks',
+            'Continuous Testing'
+        ]
+    },
+    'ingenieur-iam-workplace': {
+        name: 'Ingénieur IAM Workplace',
+        description: 'Je suis spécialisé en IAM pour environnements de travail, expert en gestion identités utilisateur.',
+        expertise: [
+            'Workplace Identity Management',
+            'SSO Implementation',
+            'Access Management',
+            'Directory Services',
+            'Mobile Authentication',
+            'Workplace Security',
+            'User Experience',
+            'Compliance Management'
+        ]
+    },
+    'ingenieur-mlops': {
+        name: 'Ingénieur MLOps',
+        description: 'Je suis spécialisé en MLOps, expert en industrialisation des cycles de vie ML.',
+        expertise: [
+            'ML Pipeline Engineering',
+            'Model Deployment',
+            'Feature Engineering',
+            'Model Monitoring',
+            'Data Versioning',
+            'Experiment Tracking',
+            'ML Infrastructure',
+            'Automated ML'
+        ]
+    }
     // Ajoutez d'autres profils d'experts ici
 };
 
@@ -71,11 +440,23 @@ class Chatbot {
         try {
             this.setupEventListeners();
             console.log('Écouteurs d\'événements configurés');
-            // Ne pas ajouter de message de bienvenue supplémentaire
-            // car il est déjà défini dans le HTML
-            console.log('Utilisation du message de bienvenue du HTML');
+            
+            // Mettre à jour le message de bienvenue avec l'expert courant
+            this.updateWelcomeMessage();
+            console.log('Message de bienvenue mis à jour pour:', this.currentExpert.name);
         } catch (error) {
             console.error('Erreur lors de l\'initialisation du chatbot:', error);
+        }
+    }
+
+    updateWelcomeMessage() {
+        const welcomeElement = document.querySelector('.welcome-message');
+        if (welcomeElement && this.currentExpert) {
+            welcomeElement.innerHTML = `
+                <p>👋 Bonjour ! Je suis ${this.currentExpert.name}. Comment puis-je vous aider aujourd'hui ?</p>
+                <p>${this.currentExpert.description}</p>
+                <p><strong>Mes domaines d'expertise :</strong> ${this.currentExpert.expertise.join(', ')}</p>
+            `;
         }
     }
 
