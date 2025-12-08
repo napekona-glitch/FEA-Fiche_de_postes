@@ -28,6 +28,19 @@
   status = 200
   force = false
 
+# Règles pour les pages HTML (sans extension)
+[[redirects]]
+  from = "/*"
+  to = "/:splat.html"
+  status = 200
+  force = false
+
+# Règles pour la page d'accueil
+[[redirects]]
+  from = "/"
+  to = "/index.html"
+  status = 200
+
 # Règles pour les appels API
 [[redirects]]
   from = "/api/*"
