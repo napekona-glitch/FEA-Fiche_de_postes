@@ -1,5 +1,5 @@
 
-# netlify.toml — Site statique avec pages HTML
+# netlify.toml — Site statique avec pages HTML nape
 
 [build]
   # Si tu n'as pas de build (HTML pur), tu peux laisser vide ou juste installer les Functions :
@@ -55,3 +55,4 @@
   to = "/index.html"
   status = 200
   force = false
+
