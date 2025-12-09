@@ -1,1 +1,143 @@
-﻿﻿<!DOCTYPE html> <html lang="fr"> <head> <meta charset="utf-8"> <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> <meta http-equiv="Content-Language" content="fr"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Test Chatbot Groq</title> <style> /* Styles de base pour le chatbot */ #chatbot-container { position: fixed; bottom: 20px; right: 20px; width: 350px; background: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); display: flex; flex-direction: column; overflow: hidden; z-index: 1000; height: 500px; } .chatbot-header { background: #4a6baf; color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center; } .chatbot-messages { flex: 1; padding: 15px; overflow-y: auto; } .message { margin-bottom: 10px; max-width: 80%; padding: 8px 12px; border-radius: 15px; line-height: 1.4; } .user-message { background: #e3f2fd; margin-left: auto; border-bottom-right-radius: 5px; } .assistant-message { background: #f5f5f5; margin-right: auto; border-bottom-left-radius: 5px; } .typing-indicator .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background-color: #666; margin: 0 2px; animation: bounce 1.4s infinite ease-in-out both; } .typing-indicator .dot:nth-child(1) { animation-delay: -0.32s; } .typing-indicator .dot:nth-child(2) { animation-delay: -0.16s; } @keyframes bounce { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1.0); } } .chatbot-input { padding: 10px; border-top: 1px solid #eee; display: flex; } #user-input { flex: 1; padding: 8px; border: 1px solid #ddd; border-radius: 20px; margin-right: 10px; } #send-message { background: #4a6baf; color: white; border: none; border-radius: 20px; padding: 8px 15px; cursor: pointer; } #send-message:disabled { background: #ccc; cursor: not-allowed; } .minimized { height: 60px !important; overflow: hidden; } .minimized .chatbot-messages, .minimized .chatbot-input { display: none; } </style> </head> <body> <h1>Test d'intégration du Chatbot avec Groq</h1> <p>Ouvrez la console du navigateur (F12) pour voir les logs de débogage.</p> <!-- Le chatbot sera injectàici par le JavaScript --> <!-- Inclure les scripts nécessaires --> <script src="JS/groq-config.js"></script> <script src="JS/groq-service.js"></script> <script src="JS/chatbot.js"></script> <script> // Initialiser le chatbot quand la page est chargée document.addEventListener('DOMContentLoaded', () => { // Créer un bouton pour ouvrir le chat const toggleButton = document.createElement('button'); toggleButton.id = 'chatbot-toggle'; toggleButton.textContent = 'Ouvrir le chat'; toggleButton.style.position = 'fixed'; toggleButton.style.bottom = '20px'; toggleButton.style.right = '20px'; toggleButton.style.padding = '10px 20px'; toggleButton.style.background = '#4a6baf'; toggleButton.style.color = 'white'; toggleButton.style.border = 'none'; toggleButton.style.borderRadius = '20px'; toggleButton.style.cursor = 'pointer'; toggleButton.style.zIndex = '1000'; document.body.appendChild(toggleButton); // Simuler un expert pour le test const testExpert = { name: 'Expert en Architecture', description: 'Je suis un expert en architecture logicielle et systé¨mes d\'information.', expertise: ['Architecture logicielle', 'Microservices', 'Cloud Computing', 'DevOps'] }; // Initialiser le chatbot window.chatbot = new Chatbot(); // Remplacer l'expert détectàpar notre expert de test chatbot.currentExpert = testExpert; // Si le service Groq est disponible, l'initialiser avec l'expert if (window.groqService) { window.groqService.initializeConversation(testExpert); console.log('Service Groq initialisàavec succé¨s'); } else { console.warn('Le service Groq n\'est pas disponible. Le chatbot utilisera des réponses par défaut.'); } }); </script> </body> </html> 
+﻿﻿<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Language" content="fr">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Chatbot Groq</title>
+    <style>
+        /* Styles de base pour le chatbot */
+        #chatbot-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 350px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            z-index: 1000;
+            height: 500px;
+        }
+
+        .chatbot-header {
+            background: #4a6baf;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chatbot-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+        }
+
+        .message {
+            margin-bottom: 10px;
+            max-width: 80%;
+            padding: 8px 12px;
+            border-radius: 15px;
+            line-height: 1.4;
+        }
+
+        .user-message {
+            background: #e3f2fd;
+            margin-left: auto;
+            border-bottom-right-radius: 5px;
+        }
+
+        .assistant-message {
+            background: #f5f5f5;
+            margin-right: auto;
+            border-bottom-left-radius: 5px;
+        }
+
+        .typing-indicator .dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #666;
+            margin: 0 2px;
+            animation: bounce 1.4s infinite ease-in-out both;
+        }
+
+        .typing-indicator .dot:nth-child(1) {
+            animation-delay: -0.32s;
+        }
+
+        .typing-indicator .dot:nth-child(2) {
+            animation-delay: -0.16s;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            80%,
+            100% {
+                transform: scale(0);
+            }
+
+            40% {
+                transform: scale(1.0);
+            }
+        }
+
+        .chatbot-input {
+            padding: 10px;
+            border-top: 1px solid #eee;
+            display: flex;
+        }
+
+        #user-input {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            margin-right: 10px;
+        }
+
+        #send-message {
+            background: #4a6baf;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+
+        #send-message:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .minimized {
+            height: 60px !important;
+            overflow: hidden;
+        }
+
+        .minimized .chatbot-messages,
+        .minimized .chatbot-input {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Test d'intégration du Chatbot avec Groq</h1>
+    <p>Ouvrez la console du navigateur (F12) pour voir les logs de débogage.</p>
+    <!-- Le chatbot sera injectàici par le JavaScript --> <!-- Inclure les scripts nécessaires -->
+    <script src="JS/groq-config.js"></script>
+    <script src="JS/groq-service.js"></script>
+    <script src="JS/chatbot.js"></script>
+    <script> // Initialiser le chatbot quand la page est chargée document.addEventListener('DOMContentLoaded', () => { // Créer un bouton pour ouvrir le chat const toggleButton = document.createElement('button'); toggleButton.id = 'chatbot-toggle'; toggleButton.textContent = 'Ouvrir le chat'; toggleButton.style.position = 'fixed'; toggleButton.style.bottom = '20px'; toggleButton.style.right = '20px'; toggleButton.style.padding = '10px 20px'; toggleButton.style.background = '#4a6baf'; toggleButton.style.color = 'white'; toggleButton.style.border = 'none'; toggleButton.style.borderRadius = '20px'; toggleButton.style.cursor = 'pointer'; toggleButton.style.zIndex = '1000'; document.body.appendChild(toggleButton); // Simuler un expert pour le test const testExpert = { name: 'Expert en Architecture', description: 'Je suis un expert en architecture logicielle et systé¨mes d\'information.', expertise: ['Architecture logicielle', 'Microservices', 'Cloud Computing', 'DevOps'] }; // Initialiser le chatbot window.chatbot = new Chatbot(); // Remplacer l'expert détectàpar notre expert de test chatbot.currentExpert = testExpert; // Si le service Groq est disponible, l'initialiser avec l'expert if (window.groqService) { window.groqService.initializeConversation(testExpert); console.log('Service Groq initialisàavec succé¨s'); } else { console.warn('Le service Groq n\'est pas disponible. Le chatbot utilisera des réponses par défaut.'); } }); </script>
+</body>
+
+</html>

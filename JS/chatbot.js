@@ -30,9 +30,9 @@ const experts = {
     },
     'architecte-securite': {
         name: 'Expert en Sécurité',
-        description: 'Je suis spécialisàdans la cybersécuritàet la protection des systèmes d\'information.',
+        description: 'Je suis spécialisàdans la cybersecurité et la protection des systèmes d\'information.',
         expertise: [
-            'Sécuritàdes applications',
+            'securité des applications',
             'Conformité',
             'Tests d\'intrusion',
             'Politiques de sécurité',

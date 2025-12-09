@@ -25,7 +25,7 @@ const localJobIndex = [
     {
         id: 'ingenieur-securite',
         title: 'Ingénieur Sécurité',
-        description: 'Expert en sécuritàdes systèmes d\'information et protection des données.',
+        description: 'Expert en securité des systèmes d\'information et protection des données.',
         categories: ['Sécurité', 'Conformité']
     },
     {
