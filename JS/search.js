@@ -36,7 +36,7 @@ const localJobIndex = [
     },
     {
         id: 'responsable-continuite',
-        title: 'Responsable Continuitàd\'Activité',
+        title: 'Responsable continuité d\'Activité',
         description: 'Garant de la disponibilitàdes systèmes critiques.',
         categories: ['Sécurité', 'Infrastructure']
     },
