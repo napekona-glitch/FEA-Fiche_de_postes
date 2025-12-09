@@ -463,6 +463,75 @@ class Chatbot {
     // La méthode addWelcomeMessage a étàsupprimée car le message de bienvenue
     // est maintenant défini directement dans le HTML
 
+    // Fonction pour formater joliment les réponses du LLM
+    formatLLMResponse(content) {
+        if (typeof content !== 'string') {
+            return content;
+        }
+
+        let formattedContent = content;
+        
+        // Convertir les sauts de ligne en paragraphes
+        formattedContent = formattedContent.split('\n').filter(line => line.trim()).map(line => {
+            // Mettre en évidence les termes importants entre ** **
+            line = line.replace(/\*\*(.*?)\*\*/g, '<strong class="highlight">$1</strong>');
+            
+            // Mettre en évidence les termes entre * *
+            line = line.replace(/\*(.*?)\*/g, '<em class="emphasis">$1</em>');
+            
+            // Convertir les listes avec - ou • en listes HTML
+            if (line.trim().match(/^[-•]\s+/)) {
+                return `<li class="chat-list-item">${line.replace(/^[-•]\s+/, '')}</li>`;
+            }
+            
+            // Convertir les listes numérotées
+            if (line.trim().match(/^\d+\.\s+/)) {
+                return `<li class="chat-list-item-numbered">${line.replace(/^\d+\.\s+/, '')}</li>`;
+            }
+            
+            // Mettre en évidence les titres (lignes qui se terminent par :)
+            if (line.trim().endsWith(':')) {
+                return `<p class="chat-title">${line}</p>`;
+            }
+            
+            // Ligne normale
+            return `<p class="chat-paragraph">${line}</p>`;
+        }).join('\n');
+        
+        // Regrouper les listes
+        formattedContent = formattedContent.replace(/(<li class="chat-list-item">.*?<\/li>\s*)+/gs, (match) => {
+            return `<ul class="chat-list">${match}</ul>`;
+        });
+        
+        formattedContent = formattedContent.replace(/(<li class="chat-list-item-numbered">.*?<\/li>\s*)+/gs, (match) => {
+            return `<ol class="chat-list-numbered">${match}</ol>`;
+        });
+        
+        // Ajouter des icônes pour certains types de contenu
+        formattedContent = formattedContent.replace(/<p class="chat-title">(.*?)<\/p>/g, (match, title) => {
+            const icon = this.getIconForTitle(title);
+            return `<p class="chat-title">${icon} ${title}</p>`;
+        });
+        
+        return formattedContent;
+    }
+    
+    // Fonction pour obtenir une icône en fonction du titre
+    getIconForTitle(title) {
+        const titleLower = title.toLowerCase();
+        if (titleLower.includes('compétence') || titleLower.includes('expertise')) return '🎯';
+        if (titleLower.includes('mission') || titleLower.includes('tâche')) return '📋';
+        if (titleLower.includes('formation') || titleLower.includes('diplôme')) return '🎓';
+        if (titleLower.includes('expérience')) return '💼';
+        if (titleLower.includes('technologie') || titleLower.includes('outil')) return '🛠️';
+        if (titleLower.includes('sécurité')) return '🔒';
+        if (titleLower.includes('cloud')) return '☁️';
+        if (titleLower.includes('architecture')) return '🏗️';
+        if (titleLower.includes('avantage') || titleLower.includes('bénéfice')) return '✅';
+        if (titleLower.includes('conseil') || titleLower.includes('recommandation')) return '💡';
+        return '📌';
+    }
+
     addMessage(role, content) {
         const messagesContainer = document.getElementById('chat-messages');
         if (!messagesContainer) {
@@ -470,10 +539,16 @@ class Chatbot {
             return;
         }
 
+        // Formatter le contenu si c'est un message de l'assistant
+        let formattedContent = content;
+        if (role === 'assistant' || role === 'bot') {
+            formattedContent = this.formatLLMResponse(content);
+        }
+
         const messageElement = document.createElement('div');
         messageElement.className = `message ${role}-message`;
         messageElement.innerHTML = `
-            <div class="message-content">${content}</div>
+            <div class="message-content">${formattedContent}</div>
             <div class="message-time">${new Date().toLocaleTimeString([], {hour: '2-digit', 'minute': '2-digit'})}</div>
         `;
         messagesContainer.appendChild(messageElement);
